@@ -2,7 +2,7 @@
 title: "Example assignment"
 author: "Matt Crump"
 date: "2022-10-21"
-categories: [goals,general]
+categories: [General]
 ---
 
 ### Introspect on your own mental imagery

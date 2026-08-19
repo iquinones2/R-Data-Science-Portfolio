@@ -10,10 +10,10 @@ website:
       - icon: github
         href: https://github.com/iquinones2/R-Data-Science-Portfolio.git
       - icon: linkedin
-        href: www.linkedin.com/in/isai-quinones-a147b42b8
+        href: https://www.linkedin.com/in/isai-quinones-a147b42b8
 format:
   html:
-    theme: minty
+    theme: lux
     css: styles.css
 
 editor: visual
