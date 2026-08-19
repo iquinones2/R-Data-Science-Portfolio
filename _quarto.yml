@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Isai Quiñones | Data Science Portfolio"
+  title: "My Portfolio"
   navbar:
     right:
       - about.qmd

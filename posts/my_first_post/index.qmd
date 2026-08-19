@@ -1,7 +1,7 @@
 ---
-title: "My First post"
-author: "Matt Crump"
-date: "2022-10-21"
+title: "R Graphs"
+author: "Isai Quinones"
+date: "2026-8-19"
 categories: [General]
 ---
 
