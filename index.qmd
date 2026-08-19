@@ -1,5 +1,5 @@
 ---
-title: "quartoCourseBlog"
+title: "Isai Quiñones | Data Science Portfolio"
 listing:
   contents: posts
   sort: "date desc"
@@ -13,3 +13,7 @@ title-block-banner: true
 ---
 
 This is my blog.
+
+Type **bold** *italics.*
+
+## Heading
