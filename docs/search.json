@@ -39,7 +39,21 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "The content on this page is from about.qmd. Edit that file to change how this page looks.\n“About” pages are special quarto template pages, with multiple options: https://quarto.org/docs/websites/website-about.html.\nTry changing the template type from jolla to one of the other options for a different look and feel."
+    "text": "Hello! My name is Isai Quinones. I am a Dominican University Student majoring in “Data Science” and “Mathematics and Computer Science”"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About",
+    "section": "Education",
+    "text": "Education\nDominican University, River Forest | Chicago, IL Expected Grad year/month : 2027/05\nMajor: Data Science / Mathematics and Computer Science\nMinor: Finance"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About",
+    "section": "Experience",
+    "text": "Experience\nDatatelligent | Solutions Engineer | September 2025 - April 2026"
   },
   {
     "objectID": "readme.html",
