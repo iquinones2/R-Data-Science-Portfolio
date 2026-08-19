@@ -14,6 +14,34 @@
     "text": "My mental imagery\nMy mental imagery is like…"
   },
   {
+    "objectID": "posts/my_first_post/index.html",
+    "href": "posts/my_first_post/index.html",
+    "title": "R Graphs",
+    "section": "",
+    "text": "This is an example first post. Whatever you write here will appear inside your post.\nIt is possible to write lists:\nAnd make headers"
+  },
+  {
+    "objectID": "posts/my_first_post/index.html#this-is-a-second-level-heading",
+    "href": "posts/my_first_post/index.html#this-is-a-second-level-heading",
+    "title": "R Graphs",
+    "section": "This is a second level heading",
+    "text": "This is a second level heading\nYou can include images, and many other kinds of content.\nIf you are using the visual editor in Rstudio you can drag images onto the editor to insert them into the document. Otherwise, you need to place the image inside of the folder for this post, and then you can insert it to your post directly, like this:\n\nThe first image in a blog post will also be used on the listings page."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Isai Quiñones | Data Science Portfolio",
+    "section": "",
+    "text": "R Graphs\n\n\n\nR\n\nCode\n\ndata analytics\n\n\n\n\n\n\n\n\n\nAug 20, 2026\n\n\nIsai Quinones\n\n\n\n\n\n\n\n\n\n\n\n\nR Graphs\n\n\n\nGeneral\n\n\n\n\n\n\n\n\n\nAug 19, 2026\n\n\nIsai Quinones\n\n\n\n\n\n\n\n\n\n\n\n\nExample assignment\n\n\n\nGeneral\n\n\n\n\n\n\n\n\n\nOct 21, 2022\n\n\nMatt Crump\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "The content on this page is from about.qmd. Edit that file to change how this page looks.\n“About” pages are special quarto template pages, with multiple options: https://quarto.org/docs/websites/website-about.html.\nTry changing the template type from jolla to one of the other options for a different look and feel."
+  },
+  {
     "objectID": "readme.html",
     "href": "readme.html",
     "title": "Using this quarto course blog template",
@@ -98,31 +126,10 @@
     "text": "See this growing list of quarto resources for much, much more:\nhttps://github.com/mcanouil/awesome-quarto"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "posts/cool_ggplot_work/index.html",
+    "href": "posts/cool_ggplot_work/index.html",
+    "title": "R Graphs",
     "section": "",
-    "text": "The content on this page is from about.qmd. Edit that file to change how this page looks.\n“About” pages are special quarto template pages, with multiple options: https://quarto.org/docs/websites/website-about.html.\nTry changing the template type from jolla to one of the other options for a different look and feel."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Isai Quiñones | Data Science Portfolio",
-    "section": "",
-    "text": "My First post\n\n\n\nGeneral\n\n\n\n\n\n\n\n\n\nOct 21, 2022\n\n\nMatt Crump\n\n\n\n\n\n\n\n\n\n\n\n\nExample assignment\n\n\n\nGeneral\n\n\n\n\n\n\n\n\n\nOct 21, 2022\n\n\nMatt Crump\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/my_first_post/index.html",
-    "href": "posts/my_first_post/index.html",
-    "title": "My First post",
-    "section": "",
-    "text": "This is an example first post. Whatever you write here will appear inside your post.\nIt is possible to write lists:\nAnd make headers"
-  },
-  {
-    "objectID": "posts/my_first_post/index.html#this-is-a-second-level-heading",
-    "href": "posts/my_first_post/index.html#this-is-a-second-level-heading",
-    "title": "My First post",
-    "section": "This is a second level heading",
-    "text": "This is a second level heading\nYou can include images, and many other kinds of content.\nIf you are using the visual editor in Rstudio you can drag images onto the editor to insert them into the document. Otherwise, you need to place the image inside of the folder for this post, and then you can insert it to your post directly, like this:\n\nThe first image in a blog post will also be used on the listings page."
+    "text": "On Aug. 17th through the 21st I took a week long crash course on how to use R for Data Science.\n\nlibrary(tidyverse)\n\nggplot(\n  data = mpg, \n  mapping = aes(\n    x = cty,\n    y = hwy\n  )\n)+ geom_point()\n\n\n\n\n\n\n\n\nThis is great, but one thing we learned about is the importance of clear labels using the lab functions.\n\nlibrary(tidyverse)\n\nggplot(\n  data = mpg, \n  mapping = aes(\n    x = cty,\n    y = hwy\n  )\n)+ geom_point() + \n  geom_smooth() + \n  labs(\n    x = \"City Milage\",\n    y = \"Highway Milage\", \n    title = \"City vs Highway\"\n  )\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
   }
 ]

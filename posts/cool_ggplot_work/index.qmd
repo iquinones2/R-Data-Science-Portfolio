@@ -1,0 +1,47 @@
+---
+title: "R Graphs"
+author: "Isai Quinones"
+date: "2026-8-20"
+categories: [R,Code,data analytics]
+---
+
+On Aug. 17th through the 21st I took a week long crash course on how to use R for Data Science.
+
+```{r}
+#| label: MPG in city vs highway
+#| message: false
+#| warning: false
+library(tidyverse)
+
+ggplot(
+  data = mpg, 
+  mapping = aes(
+    x = cty,
+    y = hwy
+  )
+)+ geom_point()
+
+
+```
+
+This is great, but one thing we learned about is the importance of clear labels using the lab functions.
+
+```{r}
+#| label: c2
+#| echo: true
+library(tidyverse)
+
+ggplot(
+  data = mpg, 
+  mapping = aes(
+    x = cty,
+    y = hwy
+  )
+)+ geom_point() + 
+  geom_smooth() + 
+  labs(
+    x = "City Milage",
+    y = "Highway Milage", 
+    title = "City vs Highway"
+  )
+```

@@ -3,6 +3,7 @@ title: "R Graphs"
 author: "Isai Quinones"
 date: "2026-8-19"
 categories: [General]
+image: Tudesco.jpeg
 ---
 
 This is an example first post. Whatever you write here will appear inside your post.
