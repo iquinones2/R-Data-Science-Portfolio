@@ -2,8 +2,7 @@
 title: "The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis"
 author: "Isai Quinones"
 date: "2026-8-21"
-categories: [R, Code, Data Analytics]
-image: Tudesco.jpeg
+categories: [R, Code, Data Analytics, Data Statistics]
 ---
 
 # The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis
@@ -137,3 +136,5 @@ model1 <- lm(
 
 summary(model1)
 ```
+
+There is statistically significant evidence of a linear relationship between daily changes in the 10-year Treasury yield and daily S&P 500 returns in your 2000–2026 dataset.

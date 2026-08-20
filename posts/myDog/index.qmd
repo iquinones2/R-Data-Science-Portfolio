@@ -2,7 +2,7 @@
 title: "My Dog"
 author: "Isai Quinones"
 date: "2026-8-18"
-categories: [General]
+categories: [Dog]
 image: dog.jpg
 ---
 
