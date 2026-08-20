@@ -1,24 +1,24 @@
 [
   {
-    "objectID": "posts/Example_assignment/index.html",
-    "href": "posts/Example_assignment/index.html",
-    "title": "My Dog",
+    "objectID": "posts/cool_ggplot_work/index.html",
+    "href": "posts/cool_ggplot_work/index.html",
+    "title": "R Graphs",
     "section": "",
-    "text": "This is my Dog.\nHe is a Cane Corso and Poodle mix breed. He is listed as a canoodle which is funny to pronounce."
+    "text": "On Aug. 17th through the 21st I took a week long crash course on how to use R for Data Science.\n\nlibrary(tidyverse)\n\nggplot(\n  data = mpg, \n  mapping = aes(\n    x = cty,\n    y = hwy\n  )\n)+ geom_point()\n\n\n\n\n\n\n\n\nThis is great, but one thing we learned about is the importance of clear labels using the lab functions.\n\nlibrary(tidyverse)\n\nggplot(\n  data = mpg, \n  mapping = aes(\n    x = cty,\n    y = hwy\n  )\n)+ geom_point() + \n  geom_smooth() + \n  labs(\n    x = \"City Milage\",\n    y = \"Highway Milage\", \n    title = \"City vs Highway\"\n  )\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
   },
   {
     "objectID": "posts/Stock&Bond/index.html",
     "href": "posts/Stock&Bond/index.html",
     "title": "The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis",
     "section": "",
-    "text": "The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis\nI am comparing the 10 year bond and the stock market from 2000 to current day. My sources are yahoo financial for the Treasury Bond and the Federal Reserve Bank of St. Louis / FRED.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nlibrary(quantmod)\nlibrary(fredr)\nlibrary(tidyverse)\n\nmodel1 &lt;- lm(\n  sp500_return ~ treasury10_change, \n  data = stock_bond_clean\n)\n\nsummary(model1)\n\n\nCall:\nlm(formula = sp500_return ~ treasury10_change, data = stock_bond_clean)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.107576 -0.005203  0.000264  0.005624  0.101557 \n\nCoefficients:\n                   Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       0.0003338  0.0001422   2.347   0.0189 *  \ntreasury10_change 0.0599927  0.0024630  24.357   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01155 on 6592 degrees of freedom\nMultiple R-squared:  0.08257,   Adjusted R-squared:  0.08243 \nF-statistic: 593.3 on 1 and 6592 DF,  p-value: &lt; 2.2e-16"
+    "text": "The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis\nI am comparing the 10 year bond and the stock market from 2000 to current day. My sources are yahoo financial for the Treasury Bond and the Federal Reserve Bank of St. Louis / FRED.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nlibrary(quantmod)\nlibrary(fredr)\nlibrary(tidyverse)\n\nmodel1 &lt;- lm(\n  sp500_return ~ treasury10_change, \n  data = stock_bond_clean\n)\n\nsummary(model1)\n\n\nCall:\nlm(formula = sp500_return ~ treasury10_change, data = stock_bond_clean)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.107576 -0.005203  0.000264  0.005624  0.101557 \n\nCoefficients:\n                   Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       0.0003338  0.0001422   2.347   0.0189 *  \ntreasury10_change 0.0599927  0.0024630  24.357   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01155 on 6592 degrees of freedom\nMultiple R-squared:  0.08257,   Adjusted R-squared:  0.08243 \nF-statistic: 593.3 on 1 and 6592 DF,  p-value: &lt; 2.2e-16\n\n\nThere is statistically significant evidence of a linear relationship between daily changes in the 10-year Treasury yield and daily S&P 500 returns in your 2000–2026 dataset."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Isai Quiñones | Data Science Portfolio",
     "section": "",
-    "text": "The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis\n\n\n\nR\n\nCode\n\nData Analytics\n\n\n\n\n\n\n\n\n\nAug 21, 2026\n\n\nIsai Quinones\n\n\n\n\n\n\n\n\n\n\n\n\nR Graphs\n\n\n\nR\n\nCode\n\nData Analytics\n\n\n\n\n\n\n\n\n\nAug 20, 2026\n\n\nIsai Quinones\n\n\n\n\n\n\n\n\n\n\n\n\nMy Dog\n\n\n\nGeneral\n\n\n\n\n\n\n\n\n\nAug 18, 2026\n\n\nIsai Quinones\n\n\n\n\n\nNo matching items"
+    "text": "The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis\n\n\n\nR\n\nCode\n\nData Analytics\n\nData Statistics\n\n\n\n\n\n\n\n\n\nAug 21, 2026\n\n\nIsai Quinones\n\n\n\n\n\n\n\n\n\n\n\n\nR Graphs\n\n\n\nR\n\nCode\n\nData Analytics\n\n\n\n\n\n\n\n\n\nAug 20, 2026\n\n\nIsai Quinones\n\n\n\n\n\n\n\n\n\n\n\n\nMy Dog\n\n\n\nDog\n\n\n\n\n\n\n\n\n\nAug 18, 2026\n\n\nIsai Quinones\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -140,10 +140,10 @@
     "text": "See this growing list of quarto resources for much, much more:\nhttps://github.com/mcanouil/awesome-quarto"
   },
   {
-    "objectID": "posts/cool_ggplot_work/index.html",
-    "href": "posts/cool_ggplot_work/index.html",
-    "title": "R Graphs",
+    "objectID": "posts/myDog/index.html",
+    "href": "posts/myDog/index.html",
+    "title": "My Dog",
     "section": "",
-    "text": "On Aug. 17th through the 21st I took a week long crash course on how to use R for Data Science.\n\nlibrary(tidyverse)\n\nggplot(\n  data = mpg, \n  mapping = aes(\n    x = cty,\n    y = hwy\n  )\n)+ geom_point()\n\n\n\n\n\n\n\n\nThis is great, but one thing we learned about is the importance of clear labels using the lab functions.\n\nlibrary(tidyverse)\n\nggplot(\n  data = mpg, \n  mapping = aes(\n    x = cty,\n    y = hwy\n  )\n)+ geom_point() + \n  geom_smooth() + \n  labs(\n    x = \"City Milage\",\n    y = \"Highway Milage\", \n    title = \"City vs Highway\"\n  )\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
+    "text": "This is my Dog.\nHe is a Cane Corso and Poodle mix breed. He is listed as a canoodle which is funny to pronounce."
   }
 ]
