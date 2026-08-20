@@ -1,7 +1,7 @@
 ---
 title: "The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis"
 author: "Isai Quinones"
-date: "2026-8-19"
+date: "2026-8-21"
 categories: [R, Code, Data Analytics]
 image: Tudesco.jpeg
 ---
@@ -99,4 +99,41 @@ ggplot(stock_bond, aes(x = date, y = treasury10)) +
     x = "Year",
     y = "10-Year Treasury Yield(%)"
   )
+```
+
+```{r}
+#| label: Scatterplot
+#| echo: false
+library(quantmod)
+library(fredr)
+library(tidyverse)
+
+ggplot(
+  stock_bond_clean,
+  aes(
+    x = treasury10_change,
+    y = sp500_return
+  )
+) + 
+  geom_point(alpha = 0.25) + 
+  geom_smooth(method = "lm") + 
+  labs(
+    title = "S&P 500 Returns vs. 10-Year Treasury Yield Changes",
+    x = "Change in 10-Year Treasury Yield",
+    y = "S&P 500 Daily Return"
+  )
+```
+
+```{r}
+#| label: Line Regression
+library(quantmod)
+library(fredr)
+library(tidyverse)
+
+model1 <- lm(
+  sp500_return ~ treasury10_change, 
+  data = stock_bond_clean
+)
+
+summary(model1)
 ```
