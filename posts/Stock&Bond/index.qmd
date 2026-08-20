@@ -3,6 +3,7 @@ title: "The Relationship Between U.S. Stock Market Returns and Treasury Bond Yie
 author: "Isai Quinones"
 date: "2026-8-21"
 categories: [R, Code, Data Analytics, Data Statistics]
+image: market.jpg
 ---
 
 # The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis
