@@ -2,7 +2,7 @@
 title: "About"
 image: philly.jpeg
 about:
-  template: solana
+  template: trestles
   links:
     - icon: envelope
       text: Email

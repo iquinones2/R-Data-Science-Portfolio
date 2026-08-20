@@ -2,7 +2,7 @@
 title: "R Graphs"
 author: "Isai Quinones"
 date: "2026-8-20"
-categories: [R,Code,data analytics]
+categories: [R,Code,Data Analytics]
 ---
 
 On Aug. 17th through the 21st I took a week long crash course on how to use R for Data Science.

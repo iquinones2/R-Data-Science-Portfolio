@@ -1,0 +1,47 @@
+---
+title: "The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis"
+author: "Isai Quinones"
+date: "2026-8-19"
+categories: [R, Code, Data Analytics]
+image: Tudesco.jpeg
+---
+
+# The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis
+
+I am comparing the 10 year bond and the stock market from 2000 to current day. My sources are yahoo financial for the Treasury Bond and the Federal Reserve Bank of St. Louis / FRED.
+
+```{r}
+library(quantmod)
+library(fredr)
+library(tidyverse)
+library(dplyr)
+fredr_has_key()
+
+getSymbols(
+  "^GSPC",
+  src= "yahoo",
+  from = "2000-01-01",
+  to = "2026-08-20"
+)
+
+sp500 <- data.frame(
+  date = index(GSPC), 
+  sp500 = as.numeric(Cl(GSPC))
+)
+
+treasury10 <- fredr(
+  series_id = "DGS10",
+  observation_start = as.Date("2000-01-01")
+)|>
+  select(date, value)|>
+  rename(treasury10 = value)
+
+
+stock_bond <- sp500|>
+  inner_join(treasury10, by = "date")
+
+range(sp500$date)
+range(treasure10$date)
+range(stock_bond$date)
+
+```

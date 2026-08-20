@@ -1,16 +1,13 @@
 ---
-title: "Example assignment"
-author: "Matt Crump"
-date: "2022-10-21"
+title: "My Dog"
+author: "Isai Quinones"
+date: "2026-8-18"
 categories: [General]
+image: dog.jpg
 ---
 
-### Introspect on your own mental imagery
+![](images/clipboard-3993590302.jpeg){width="112"}
 
-This assignment engages you in the process of introspection. Your task is to use introspection to evaluate and describe your own mental imagery abilities. Attempt to answer the following kinds of questions. What is your mental imagery like? Do you have mental imagery for different kinds of senses? Is your mental imagery vivid and life-like or very different from normal perception? How would you describe your mental imagery?
+### This is my Dog.
 
-You should write a **minimum of 250 words**, but feel free to write more. Submit your document on blackboard by the due date.
-
-## My mental imagery
-
-My mental imagery is like...
+He is a Cane Corso and Poodle mix breed. He is listed as a canoodle which is funny to pronounce.
