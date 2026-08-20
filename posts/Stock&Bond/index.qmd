@@ -11,10 +11,11 @@ image: Tudesco.jpeg
 I am comparing the 10 year bond and the stock market from 2000 to current day. My sources are yahoo financial for the Treasury Bond and the Federal Reserve Bank of St. Louis / FRED.
 
 ```{r}
+#| label: Loaded Data
+#| include: false
 library(quantmod)
 library(fredr)
 library(tidyverse)
-library(dplyr)
 fredr_has_key()
 
 getSymbols(
@@ -41,7 +42,61 @@ stock_bond <- sp500|>
   inner_join(treasury10, by = "date")
 
 range(sp500$date)
-range(treasure10$date)
+range(treasury10$date)
 range(stock_bond$date)
 
+```
+
+```{r}
+#| label: Change/Return
+#| include: false
+library(quantmod)
+library(fredr)
+library(tidyverse)
+
+stock_bond <- stock_bond |>
+  arrange(date) |>
+  mutate(
+    sp500_return = (sp500 / lag(sp500)) - 1,
+    treasury10_change = treasury10 - lag(treasury10)
+  )
+
+head(stock_bond)
+```
+
+```{r}
+#| label: CleanStockBond
+#| include: false
+library(quantmod)
+library(fredr)
+library(tidyverse)
+
+stock_bond_clean <- stock_bond |>
+  drop_na(sp500_return, treasury10_change)
+
+summary(stock_bond_clean)
+```
+
+```{r}
+#| label: SP500&10TGraph
+#| echo: false
+library(quantmod)
+library(fredr)
+library(tidyverse)
+
+ggplot(stock_bond, aes(x = date, y = sp500)) +
+  geom_line() + 
+  labs(
+    title = "S&P 500 Perfomance, 2000-2026",
+    x = "Year",
+    y = "S&P 500"
+  )
+
+ggplot(stock_bond, aes(x = date, y = treasury10)) +
+  geom_line() + 
+  labs(
+    title = "10-Year U.S. Treasury Yield, 2000-2026",
+    x = "Year",
+    y = "10-Year Treasury Yield(%)"
+  )
 ```
