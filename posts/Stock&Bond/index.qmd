@@ -138,4 +138,211 @@ model1 <- lm(
 summary(model1)
 ```
 
-There is statistically significant evidence of a linear relationship between daily changes in the 10-year Treasury yield and daily S&P 500 returns in your 2000–2026 dataset.
+A linear regression of daily S&P 500 returns on daily changes in the 10-year Treasury yield from 2000–2026 found a statistically significant positive association (β = 0.060, p \< 0.001). However, the model's R² of 0.083 indicates that Treasury yield changes alone explain only a small portion of daily equity-return variation.
+
+## How did the relationship between U.S. stock-market returns and changes in 10-year Treasury yields differ between the 2008–2009 financial crisis and the 2020 COVID-19 market shock?
+
+```{r}
+#| label: FinancialC_dataDate
+#| include: false
+library(quantmod)
+library(fredr)
+library(tidyverse)
+
+financial_crisis <- stock_bond_clean |>
+  filter(
+    date >= as.Date("2008-01-01"),
+    date <= as.Date("2009-12-31")
+  )
+
+range(financial_crisis$date)
+```
+
+```{r}
+#| label: covid_dataDate
+#| include: false
+covid <- stock_bond_clean |>
+  filter(
+    date >= as.Date("202-01-01"),
+    date <= as.Date("2020-12-31")
+  )
+
+range(covid$date)
+```
+
+```{r}
+#| label: financialc_model
+#| echo: false
+financial_model <- lm(
+  sp500_return ~ treasury10_change,
+  data = financial_crisis
+)
+
+summary(financial_crisis)
+```
+
+```{r}
+#| label: covid_model
+#| echo: false
+covid_model <- lm(
+  sp500_return ~ treasury10_change,
+  data = covid
+)
+
+summary(covid_model)
+```
+
+```{r}
+#| label: Correlation
+#| include: false
+financial_crisis_clean <- financial_crisis |>
+  drop_na(sp500_return, treasury10_change)
+
+cor(
+  financial_crisis_clean$sp500_return,
+  financial_crisis_clean$treasury10_change
+)
+
+covid_clean <- covid |>
+  drop_na(sp500_return, treasury10_change)
+
+cor(
+  covid_clean$sp500_return,
+  covid_clean$treasury10_change
+)
+```
+
+```{r}
+#| label: Comparison
+#| include: false
+comparison <- data.frame(
+  Period = c(
+    "2000–2026",
+    "2008-2009 Financial Crisis",
+    "2020 COVID-19"
+  ),
+  
+  Correlation = c(
+    cor(
+      stock_bond_clean$sp500_return,
+      stock_bond_clean$treasury10_change
+    ),
+    
+    cor(
+      financial_crisis_clean$sp500_return,
+      financial_crisis_clean$treasury10_change
+    ),
+    
+    cor(
+      covid_clean$sp500_return,
+      covid_clean$treasury10_change
+    )
+  ),
+  
+  Beta = c(
+    coef(model1)["treasury10_change"],
+    coef(financial_model)["treasury10_change"],
+    coef(covid_model)["treasury10_change"]
+  ),
+  
+  R_squared = c(
+    summary(model1)$r.squared,
+    summary(financial_model)$r.squared,
+    summary(covid_model)$r.squared
+  )
+)
+
+comparison
+```
+
+```{r}
+#| label: FinC_graph
+#| echo: false
+ggplot(
+  financial_crisis_clean,
+  aes(
+    x= treasury10_change,
+    y=sp500_return
+  )
+) +
+  geom_point(alpha = 0.4) + 
+  geom_smooth(method = "lm")+
+  labs(
+    title = "S&P500 returns vs. Treasury Yiels Changes",
+    subtitle = "2009-2009 Financial Crisis",
+    x = "Change in 10-Year Treasury Yield",
+    y = "S&P 500 Daily Return"
+  )
+```
+
+```{r}
+#| label: CovidGraph
+#| echo: false
+ggplot(
+  covid_clean,
+  aes(
+    x=treasury10_change,
+    y=sp500_return
+  )
+) +
+  geom_point(alpha = 0.4) + 
+  geom_smooth(method = "lm")+
+  labs(
+    title = "S&P500 returns vs. Treasury Yiels Changes",
+    subtitle = "Covid-19 2020 Period",
+    x = "Change in 10-Year Treasury Yield",
+    y = "S&P 500 Daily Return"
+  )
+```
+
+The relationship between stock-market returns and changes in 10-Year treasury yields appear to become stronger during periods of major financial stress. Judging R² we can see a that the 10-year bond increases in portion and relation to the S&P 500 daily return. As seen with R² of 0.0824 over the years 2000-2026 to a 0.1495 in the financial crisis and a 0.1405 during COVID.
+
+```{r}
+#| label: Crisis_stats
+#| include: false
+crisis_stats_long <- comparison |>
+  pivot_longer(
+    cols = c(Correlation, Beta, R_squared),
+    names_to = "Statistics", 
+    values_to = "Value"
+  )|>
+  mutate(
+    Value = if_else(
+      Statistics == "R_squared",
+      Value * 100,
+      Value
+    )
+  )
+
+crisis_stats_long <- crisis_stats_long |>
+  mutate(
+    Statistics = recode(
+      Statistics,
+      "Correlation" = "Correlation",
+      "Beta" = "Regression Beta",
+      "R_squared" = "R² (%)"
+    )
+  )
+
+crisis_stats_long
+```
+
+```{r}
+#| label: Stats Bar
+#| echo: false
+ggplot(
+  crisis_stats_long,
+  aes(x = Period, y = Value)
+) + 
+  geom_col() + 
+  facet_wrap(~ Statistics, scales = "free_y") + 
+  labs(
+    title = "Stock-Treasury Relationship During Major Crises",
+    subtitle = "Comparison of correlation, regression coefficient, and R²",
+    x = "Period/Crisis",
+    y = "Value"
+  ) + 
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+```
