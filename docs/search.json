@@ -1,0 +1,156 @@
+[
+  {
+    "objectID": "posts/cool_ggplot_work/index.html",
+    "href": "posts/cool_ggplot_work/index.html",
+    "title": "R Graphs",
+    "section": "",
+    "text": "On Aug. 17th through the 21st I took a week long crash course on how to use R for Data Science.\n\nlibrary(tidyverse)\n\nggplot(\n  data = mpg, \n  mapping = aes(\n    x = cty,\n    y = hwy\n  )\n)+ geom_point()\n\n\n\n\n\n\n\n\nThis is great, but one thing we learned about is the importance of clear labels using the lab functions.\n\nlibrary(tidyverse)\n\nggplot(\n  data = mpg, \n  mapping = aes(\n    x = cty,\n    y = hwy\n  )\n)+ geom_point() + \n  geom_smooth() + \n  labs(\n    x = \"City Milage\",\n    y = \"Highway Milage\", \n    title = \"City vs Highway\"\n  )\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
+  },
+  {
+    "objectID": "posts/Stock&Bond/index.html",
+    "href": "posts/Stock&Bond/index.html",
+    "title": "The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis",
+    "section": "",
+    "text": "I am comparing the 10 year bond and the stock market from 2000 to current day. My sources are yahoo financial for the Treasury Bond and the Federal Reserve Bank of St. Louis / FRED.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nlibrary(quantmod)\nlibrary(fredr)\nlibrary(tidyverse)\n\nmodel1 &lt;- lm(\n  sp500_return ~ treasury10_change, \n  data = stock_bond_clean\n)\n\nsummary(model1)\n\n\nCall:\nlm(formula = sp500_return ~ treasury10_change, data = stock_bond_clean)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.107593 -0.005202  0.000261  0.005624  0.101562 \n\nCoefficients:\n                   Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       0.0003357  0.0001421   2.363   0.0182 *  \ntreasury10_change 0.0599212  0.0024619  24.339   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01155 on 6598 degrees of freedom\nMultiple R-squared:  0.08239,   Adjusted R-squared:  0.08225 \nF-statistic: 592.4 on 1 and 6598 DF,  p-value: &lt; 2.2e-16\n\n\nA linear regression of daily S&P 500 returns on daily changes in the 10-year Treasury yield from 2000–2026 found a statistically significant positive association (β = 0.060, p &lt; 0.001). However, the model’s R² of 0.083 indicates that Treasury yield changes alone explain only a small portion of daily equity-return variation.\n\n\n\n\n      date                sp500          treasury10     sp500_return       \n Min.   :2008-01-02   Min.   : 676.5   Min.   :2.080   Min.   :-0.0903498  \n 1st Qu.:2008-06-30   1st Qu.: 900.9   1st Qu.:3.240   1st Qu.:-0.0100666  \n Median :2008-12-31   Median :1060.9   Median :3.550   Median : 0.0010426  \n Mean   :2008-12-29   Mean   :1085.5   Mean   :3.463   Mean   :-0.0003753  \n 3rd Qu.:2009-06-30   3rd Qu.:1292.2   3rd Qu.:3.810   3rd Qu.: 0.0096264  \n Max.   :2009-12-31   Max.   :1447.2   Max.   :4.270   Max.   : 0.1078901  \n treasury10_change   \n Min.   :-0.5100000  \n 1st Qu.:-0.0600000  \n Median : 0.0000000  \n Mean   :-0.0004024  \n 3rd Qu.: 0.0500000  \n Max.   : 0.2400000  \n\n\n\n\n\nCall:\nlm(formula = sp500_return ~ treasury10_change, data = covid)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.103027 -0.005259  0.000288  0.005439  0.099376 \n\nCoefficients:\n                   Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       0.0003436  0.0001598    2.15   0.0316 *  \ntreasury10_change 0.0817000  0.0028014   29.16   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01153 on 5203 degrees of freedom\nMultiple R-squared:  0.1405,    Adjusted R-squared:  0.1403 \nF-statistic: 850.6 on 1 and 5203 DF,  p-value: &lt; 2.2e-16\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nThe relationship between stock-market returns and changes in 10-Year treasury yields appear to become stronger during periods of major financial stress. Judging R² we can see a that the 10-year bond increases in portion and relation to the S&P 500 daily return. As seen with R² of 0.0824 over the years 2000-2026 to a 0.1495 in the financial crisis and a 0.1405 during COVID."
+  },
+  {
+    "objectID": "posts/Stock&Bond/index.html#how-did-the-relationship-between-u.s.-stock-market-returns-and-changes-in-10-year-treasury-yields-differ-between-the-20082009-financial-crisis-and-the-2020-covid-19-market-shock",
+    "href": "posts/Stock&Bond/index.html#how-did-the-relationship-between-u.s.-stock-market-returns-and-changes-in-10-year-treasury-yields-differ-between-the-20082009-financial-crisis-and-the-2020-covid-19-market-shock",
+    "title": "The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis",
+    "section": "",
+    "text": "date                sp500          treasury10     sp500_return       \n Min.   :2008-01-02   Min.   : 676.5   Min.   :2.080   Min.   :-0.0903498  \n 1st Qu.:2008-06-30   1st Qu.: 900.9   1st Qu.:3.240   1st Qu.:-0.0100666  \n Median :2008-12-31   Median :1060.9   Median :3.550   Median : 0.0010426  \n Mean   :2008-12-29   Mean   :1085.5   Mean   :3.463   Mean   :-0.0003753  \n 3rd Qu.:2009-06-30   3rd Qu.:1292.2   3rd Qu.:3.810   3rd Qu.: 0.0096264  \n Max.   :2009-12-31   Max.   :1447.2   Max.   :4.270   Max.   : 0.1078901  \n treasury10_change   \n Min.   :-0.5100000  \n 1st Qu.:-0.0600000  \n Median : 0.0000000  \n Mean   :-0.0004024  \n 3rd Qu.: 0.0500000  \n Max.   : 0.2400000  \n\n\n\n\n\nCall:\nlm(formula = sp500_return ~ treasury10_change, data = covid)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.103027 -0.005259  0.000288  0.005439  0.099376 \n\nCoefficients:\n                   Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       0.0003436  0.0001598    2.15   0.0316 *  \ntreasury10_change 0.0817000  0.0028014   29.16   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01153 on 5203 degrees of freedom\nMultiple R-squared:  0.1405,    Adjusted R-squared:  0.1403 \nF-statistic: 850.6 on 1 and 5203 DF,  p-value: &lt; 2.2e-16\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nThe relationship between stock-market returns and changes in 10-Year treasury yields appear to become stronger during periods of major financial stress. Judging R² we can see a that the 10-year bond increases in portion and relation to the S&P 500 daily return. As seen with R² of 0.0824 over the years 2000-2026 to a 0.1495 in the financial crisis and a 0.1405 during COVID."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Isai Quiñones | Data Science Portfolio",
+    "section": "",
+    "text": "The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis\n\n\n\nR\n\nCode\n\nData Analytics\n\nData Statistics\n\n\n\n\n\n\n\n\n\nAug 21, 2026\n\n\nIsai Quinones\n\n\n\n\n\n\n\n\n\n\n\n\nR Graphs\n\n\n\nR\n\nCode\n\nData Analytics\n\n\n\n\n\n\n\n\n\nAug 20, 2026\n\n\nIsai Quinones\n\n\n\n\n\n\n\n\n\n\n\n\nMy Dog\n\n\n\nDog\n\n\n\n\n\n\n\n\n\nAug 18, 2026\n\n\nIsai Quinones\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Hello! My name is Isai Quinones. I am a Dominican University Student majoring in “Data Science” and “Mathematics and Computer Science”"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About",
+    "section": "Education",
+    "text": "Education\n\nDominican University\nRiver Forest, Illinois\nB.S. in Data Science & Mathematics and Computer Science\nMinor in Finance\nExpected Graduation: May 2027"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About",
+    "section": "Experience",
+    "text": "Experience\n\nDatatelligent\nSolutions Engineer | September 2025 – April 2026\n\nWorked with data-driven solutions and analytics technologies.\nGained experience working with Snowflake and data-focused applications.\nContributed to solutions involving data analysis and higher-education data.\nCollaborated with team members to develop and support data-driven solutions."
+  },
+  {
+    "objectID": "about.html#technical-skills",
+    "href": "about.html#technical-skills",
+    "title": "About",
+    "section": "Technical Skills",
+    "text": "Technical Skills\nProgramming & Analysis\n\nR\nPython\nSQL\nData Cleaning\nStatistical Analysis\n\nData Visualization\n\nggplot2\nQuarto\nData Visualization\nExploratory Data Analysis\n\nData & Cloud\n\nSnowflake\nGitHub\nStreamlit"
+  },
+  {
+    "objectID": "about.html#what-im-interested-in",
+    "href": "about.html#what-im-interested-in",
+    "title": "About",
+    "section": "What I’m Interested In",
+    "text": "What I’m Interested In\nI’m particularly interested in data science, data analytics, machine learning, and using data to support business decisions.\nI’m currently building this portfolio to showcase projects involving data cleaning, exploratory data analysis, visualization, statistical modeling, and machine learning using R and other data science tools."
+  },
+  {
+    "objectID": "readme.html",
+    "href": "readme.html",
+    "title": "Using this quarto course blog template",
+    "section": "",
+    "text": "This is a template for using quarto to create a course blog. A course blog can be used in many ways to engage with course content. For example, you could use the blog to post assignments, or to dive more deeply into course material that interests you. By the end of the course, your blog can serve as a portfolio of ways that you engaged in the material. By learning how to use quarto for your blog, you will also be learning new skills for creating and sharing reproducible documents that could be useful to you in the future.\nThe purpose of this page is to provide tips and pointers about blogging with quarto. Quarto is simple enough for creating a basic course blog. However, it is also very deep and can be used to create all sorts of documents, from website, to slide decks, and books.\n\n\nMany questions about quarto can be answered from the quarto documentation located at: https://quarto.org.\nIf you are looking for something specific and don’t know where to find it on the website, use the search tool in the top right corner.\n\n\n\n\nTo use this template you will need a Github.com account, and access to R and Rstudio.\nYou can get access by creating a Github.com account, and downloading the necessary open-source software to your machine.\nIt is also possible to use Rstudio in your web-browser, which does not require downloading any software. There are two sets of instructions, one for the downloading approach, and the other for using Rstudio cloud. Scroll to the bottom for instructions on using Rstudio cloud.\n\n\n\nIn order to use this template you will need to install some free open-source software on your computer.\n\nSign up for a free account at https://github.com. This a website for sharing open-source software, but it can also be used to serve your blog as a website for free.\nDownload Github Desktop and install it on your machine. This should install the version control software git on your system, and you can use Github Desktop to easily push your blog from your local computer so that it can be viewed on Github.com.\nDownload R and install it on your machine. R is a programming language capable of many things, and it needs to be on your machine before you can run R Studio.\nDownload R Studio Desktop and install it on your machine. R Studio is called an “IDE” or integrated development environment, that you can use to write your blog with quarto.\n\n\n\n\nOnce you have the software installed, the next step is to create a quarto blog project in R studio. The collection of files in this template is a pre-made quarto blog project that you can modify for your own purposes. You can also make one yourself in Rstudio.\nAssuming you have downloaded this template, and you have installed the above software, then you need to open quartoCourseBlog.Rproj.\n\n\n\n\nTo find out if everything is working, try rendering the blog. Go to the “Build” Tab and press “Render Website”.\n\nAfter the rendering is complete, you should be able to view your blog. It might show up in the viewer pane like this:\n\nAnd if you press the ‘window-with-an-arrow’ button, you can view the website in your default browser. Quarto websites automatically adjust for the size of the window, so it may appear differently in the viewer pane versus the browser.\n\n\n\nAll of the blog posts are located in the posts folder.\n\nTo make a new post, copy an existing post and then modify it. For example, my posts folder currently contains one post, and it is inside the my_first_post folder.\n\nI can copy the folder and make a new one with the same contents from the Rstudio gear-box menu:\n\nI made a folder for a second post called Example_assignment.\n\nThese are the two files inside the folder. The .qmd file is a plain text file where you will write the blog post. This folder can also be used to store other assets you might put in the post, such as pictures.\n\n\n\nTo write a new post, open the .qmd file, edit the text, and then re-render the website. This is what the text in the .qmd file looked like when I copied it.\n\nThe text at the top between the “—” is called YAML, and provides meta-data for your document. This is where you can change the title, date, name, and add keywords if you want.\nThe rest of the document is for the main body of the post. For example, I changed the text to read:\n\n\n\n\n\nRender the website from the build tab again to see your new post.\n\n\n\nTo share your blog online you will have to publish it on a server that can be accessed by other people on the internet. There are multiple ways to do this step, and I recommend using Github pages. You can view more in-depth instructions from quarto here https://quarto.org/docs/publishing/github-pages.html.\nHere are the steps:\n\nOpen Github Desktop\nGo to preferences and sign in to your Github.com account\n“Add” your blog project folder to Github Desktop\nThere should be an option for a commit message, write a note in there like “first commit”.\nPublish to github.com and uncheck private repository so that other people will be able to see your repository.\nYou should now be able to see your new repository in your github.com profile, which means you should be able to see a copy of your blog files in the repository.\nActivate Github pages for your repository (under repository settings), and serve the page from the “docs” folder.\nAccess the blog from the url generated by the github pages settings page.\n\n\n\n\nWhenever you make changes to your blog project that you want to share online follow these steps:\n\nMake changes to your blog, like writing a new post, or editing an old one.\nRender the website in R-studio. What you see here should be what you will see later on Github.com\nOpen Github Desktop and Commit your changes, by writing brief commit title, and pressing commit.\nThen, use Github Desktop to Push your changes to github.com.\nWait half a minute or so, and you should see your new content appear on the website.\n\n\n\n\nI am planning to add a video overview of these steps soon. In the meantime, these instructions may be enough to get started with R studio cloud and github.com.\n\nSign up for a free account with posit cloud here https://posit.cloud/plans/free\nSign up for a free https://github.com account.\nLog in to Github, and search for this repository https://github.com/CrumpLab/quartoCourseBlog.\n\n\nClick the green “Use this template” Button\nThis will make a copy of the template in your github account, it will show up as one of your repositories\nGive your new repository a name\n\n\nActivate Github pages for your repository (under repository settings), and serve the page from the “docs” folder. You should now be able to view the blog from the url given by github pages.\nLog into Posit Cloud\nCreate a New Project, choose “New Project from Git Repository”\n\n\nenter the URL to the github repository you just made\n\n\nLoad the project, and edit/modify the files (see above for examples of creating new posts etc.)\nTo send your changed files back to github.com you need to do a few steps\n\n\nFrom the Git tab: stage your changes, commit your changes, and push your changes using the green up arrow.\nYou will also need to authenticate your git credentials, and allow Rstudio cloud to update your github repository\nIn the terminal run these two lines, but replace with your name and email\n\n\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"you@example.com\"\n\nWhen you “push” your changes back to Github using the green up arrow, you will be asked to enter a username and password. You can enter the username for your Github.com account, but your password won’t work. You need to set up a personal access token.\nGo to your github.com profile &gt; settings page. Scroll down, click on “&lt;&gt; Developer Settings”, on the left\nClick on personal access tokens, generate a new token, give it repo access. Save the text somewhere and use it as your github password when pushing from RStudio.\n\n\nAt this point you should be able to work on your blog in Rstudio Cloud, and push your changes to have them updated on github.com, which serves your blog online.\n\n\n\n\nSee this growing list of quarto resources for much, much more:\nhttps://github.com/mcanouil/awesome-quarto"
+  },
+  {
+    "objectID": "readme.html#quarto-documentation",
+    "href": "readme.html#quarto-documentation",
+    "title": "Using this quarto course blog template",
+    "section": "",
+    "text": "Many questions about quarto can be answered from the quarto documentation located at: https://quarto.org.\nIf you are looking for something specific and don’t know where to find it on the website, use the search tool in the top right corner."
+  },
+  {
+    "objectID": "readme.html#using-this-template",
+    "href": "readme.html#using-this-template",
+    "title": "Using this quarto course blog template",
+    "section": "",
+    "text": "To use this template you will need a Github.com account, and access to R and Rstudio.\nYou can get access by creating a Github.com account, and downloading the necessary open-source software to your machine.\nIt is also possible to use Rstudio in your web-browser, which does not require downloading any software. There are two sets of instructions, one for the downloading approach, and the other for using Rstudio cloud. Scroll to the bottom for instructions on using Rstudio cloud."
+  },
+  {
+    "objectID": "readme.html#downloading-the-free-software",
+    "href": "readme.html#downloading-the-free-software",
+    "title": "Using this quarto course blog template",
+    "section": "",
+    "text": "In order to use this template you will need to install some free open-source software on your computer.\n\nSign up for a free account at https://github.com. This a website for sharing open-source software, but it can also be used to serve your blog as a website for free.\nDownload Github Desktop and install it on your machine. This should install the version control software git on your system, and you can use Github Desktop to easily push your blog from your local computer so that it can be viewed on Github.com.\nDownload R and install it on your machine. R is a programming language capable of many things, and it needs to be on your machine before you can run R Studio.\nDownload R Studio Desktop and install it on your machine. R Studio is called an “IDE” or integrated development environment, that you can use to write your blog with quarto."
+  },
+  {
+    "objectID": "readme.html#make-a-quarto-blog-project",
+    "href": "readme.html#make-a-quarto-blog-project",
+    "title": "Using this quarto course blog template",
+    "section": "",
+    "text": "Once you have the software installed, the next step is to create a quarto blog project in R studio. The collection of files in this template is a pre-made quarto blog project that you can modify for your own purposes. You can also make one yourself in Rstudio.\nAssuming you have downloaded this template, and you have installed the above software, then you need to open quartoCourseBlog.Rproj."
+  },
+  {
+    "objectID": "readme.html#render-the-blog",
+    "href": "readme.html#render-the-blog",
+    "title": "Using this quarto course blog template",
+    "section": "",
+    "text": "To find out if everything is working, try rendering the blog. Go to the “Build” Tab and press “Render Website”.\n\nAfter the rendering is complete, you should be able to view your blog. It might show up in the viewer pane like this:\n\nAnd if you press the ‘window-with-an-arrow’ button, you can view the website in your default browser. Quarto websites automatically adjust for the size of the window, so it may appear differently in the viewer pane versus the browser."
+  },
+  {
+    "objectID": "readme.html#make-a-new-blog-post",
+    "href": "readme.html#make-a-new-blog-post",
+    "title": "Using this quarto course blog template",
+    "section": "",
+    "text": "All of the blog posts are located in the posts folder.\n\nTo make a new post, copy an existing post and then modify it. For example, my posts folder currently contains one post, and it is inside the my_first_post folder.\n\nI can copy the folder and make a new one with the same contents from the Rstudio gear-box menu:\n\nI made a folder for a second post called Example_assignment.\n\nThese are the two files inside the folder. The .qmd file is a plain text file where you will write the blog post. This folder can also be used to store other assets you might put in the post, such as pictures.\n\n\n\nTo write a new post, open the .qmd file, edit the text, and then re-render the website. This is what the text in the .qmd file looked like when I copied it.\n\nThe text at the top between the “—” is called YAML, and provides meta-data for your document. This is where you can change the title, date, name, and add keywords if you want.\nThe rest of the document is for the main body of the post. For example, I changed the text to read:"
+  },
+  {
+    "objectID": "readme.html#re-render-to-see-your-changes",
+    "href": "readme.html#re-render-to-see-your-changes",
+    "title": "Using this quarto course blog template",
+    "section": "",
+    "text": "Render the website from the build tab again to see your new post."
+  },
+  {
+    "objectID": "readme.html#share-your-blog-on-github.com",
+    "href": "readme.html#share-your-blog-on-github.com",
+    "title": "Using this quarto course blog template",
+    "section": "",
+    "text": "To share your blog online you will have to publish it on a server that can be accessed by other people on the internet. There are multiple ways to do this step, and I recommend using Github pages. You can view more in-depth instructions from quarto here https://quarto.org/docs/publishing/github-pages.html.\nHere are the steps:\n\nOpen Github Desktop\nGo to preferences and sign in to your Github.com account\n“Add” your blog project folder to Github Desktop\nThere should be an option for a commit message, write a note in there like “first commit”.\nPublish to github.com and uncheck private repository so that other people will be able to see your repository.\nYou should now be able to see your new repository in your github.com profile, which means you should be able to see a copy of your blog files in the repository.\nActivate Github pages for your repository (under repository settings), and serve the page from the “docs” folder.\nAccess the blog from the url generated by the github pages settings page."
+  },
+  {
+    "objectID": "readme.html#pushing-new-posts-to-github.com",
+    "href": "readme.html#pushing-new-posts-to-github.com",
+    "title": "Using this quarto course blog template",
+    "section": "",
+    "text": "Whenever you make changes to your blog project that you want to share online follow these steps:\n\nMake changes to your blog, like writing a new post, or editing an old one.\nRender the website in R-studio. What you see here should be what you will see later on Github.com\nOpen Github Desktop and Commit your changes, by writing brief commit title, and pressing commit.\nThen, use Github Desktop to Push your changes to github.com.\nWait half a minute or so, and you should see your new content appear on the website."
+  },
+  {
+    "objectID": "readme.html#posit-cloud-formerly-rstudio-cloud",
+    "href": "readme.html#posit-cloud-formerly-rstudio-cloud",
+    "title": "Using this quarto course blog template",
+    "section": "",
+    "text": "I am planning to add a video overview of these steps soon. In the meantime, these instructions may be enough to get started with R studio cloud and github.com.\n\nSign up for a free account with posit cloud here https://posit.cloud/plans/free\nSign up for a free https://github.com account.\nLog in to Github, and search for this repository https://github.com/CrumpLab/quartoCourseBlog.\n\n\nClick the green “Use this template” Button\nThis will make a copy of the template in your github account, it will show up as one of your repositories\nGive your new repository a name\n\n\nActivate Github pages for your repository (under repository settings), and serve the page from the “docs” folder. You should now be able to view the blog from the url given by github pages.\nLog into Posit Cloud\nCreate a New Project, choose “New Project from Git Repository”\n\n\nenter the URL to the github repository you just made\n\n\nLoad the project, and edit/modify the files (see above for examples of creating new posts etc.)\nTo send your changed files back to github.com you need to do a few steps\n\n\nFrom the Git tab: stage your changes, commit your changes, and push your changes using the green up arrow.\nYou will also need to authenticate your git credentials, and allow Rstudio cloud to update your github repository\nIn the terminal run these two lines, but replace with your name and email\n\n\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"you@example.com\"\n\nWhen you “push” your changes back to Github using the green up arrow, you will be asked to enter a username and password. You can enter the username for your Github.com account, but your password won’t work. You need to set up a personal access token.\nGo to your github.com profile &gt; settings page. Scroll down, click on “&lt;&gt; Developer Settings”, on the left\nClick on personal access tokens, generate a new token, give it repo access. Save the text somewhere and use it as your github password when pushing from RStudio.\n\n\nAt this point you should be able to work on your blog in Rstudio Cloud, and push your changes to have them updated on github.com, which serves your blog online."
+  },
+  {
+    "objectID": "readme.html#more-quarto",
+    "href": "readme.html#more-quarto",
+    "title": "Using this quarto course blog template",
+    "section": "",
+    "text": "See this growing list of quarto resources for much, much more:\nhttps://github.com/mcanouil/awesome-quarto"
+  },
+  {
+    "objectID": "posts/myDog/index.html",
+    "href": "posts/myDog/index.html",
+    "title": "My Dog",
+    "section": "",
+    "text": "This is my Dog.\nHe is a Cane Corso and Poodle mix breed. He is listed as a canoodle which is funny to pronounce."
+  }
+]
