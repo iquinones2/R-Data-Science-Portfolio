@@ -196,7 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="the-relationship-between-u.s.-stock-market-returns-and-treasury-bond-yields-a-statistical-analysis" class="level1">
 <h1>The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis</h1>
-<p>I am comparing the 10 year bond and the stock market from 2000 to current day. My sources are yahoo financial for the Treasury Bond and the Federal Reserve Bank of St.&nbsp;Louis / FRED.</p>
+<p>This project examines the relationship between the U.S. stock market and the 10-year U.S. Treasury yield from 2000 through 2026. The S&amp;P 500 is used to represent stock-market performance, while the 10-year Treasury yield represents conditions in the U.S. bond market. Historical S&amp;P 500 data were obtained through Yahoo Finance, while Treasury yield data were collected from the Federal Reserve Bank of St.&nbsp;Louis Federal Reserve Economic Data (FRED). Using R, I analyze the relationship between daily S&amp;P 500 returns and changes in the 10-year Treasury yield, with particular attention to how this relationship changed during the 2008–2009 Financial Crisis and the 2020 COVID-19 market shock.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -324,7 +324,7 @@ F-statistic: 850.6 on 1 and 5203 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 </div>
-<p>The relationship between stock-market returns and changes in 10-Year treasury yields appear to become stronger during periods of major financial stress. Judging R² we can see a that the 10-year bond increases in portion and relation to the S&amp;P 500 daily return. As seen with R² of 0.0824 over the years 2000-2026 to a 0.1495 in the financial crisis and a 0.1405 during COVID.</p>
+<p>The relationship between S&amp;P 500 returns and changes in 10-year Treasury yields strengthened during periods of major financial stress. This is reflected in the increase in R² from 0.0824 during 2000–2026 to 0.1495 during the 2008–2009 Financial Crisis and 0.1405 during the 2020 COVID-19 period. Thus, changes in Treasury yields explained a greater proportion of the variation in daily S&amp;P 500 returns during both crises.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
