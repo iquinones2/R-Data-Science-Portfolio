@@ -163,7 +163,7 @@ range(financial_crisis$date)
 #| include: false
 covid <- stock_bond_clean |>
   filter(
-    date >= as.Date("202-01-01"),
+    date >= as.Date("2020-01-01"),
     date <= as.Date("2020-12-31")
   )
 
@@ -178,7 +178,7 @@ financial_model <- lm(
   data = financial_crisis
 )
 
-summary(financial_crisis)
+summary(financial_model)
 ```
 
 ```{r}
