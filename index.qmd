@@ -12,3 +12,28 @@ page-layout: full
 title-block-banner: true
 ---
 
+<style>
+.intro-card {
+  max-width: 900px;
+  margin: 1.5rem auto;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  border-left: 6px solid #2c5aa0;
+  background: rgba(44, 90, 160, 0.08);
+}
+.intro-card h2 { margin-top: 0; border-bottom: none; }
+.intro-card .btn { margin: 0.25rem 0.4rem 0.25rem 0; }
+.intro-tools { opacity: 0.85; font-size: 0.95rem; }
+</style>
+
+::: {.intro-card}
+## Hi, I'm Isai
+
+Senior at **Dominican University** (graduating May 2027), double majoring in **Data Science/Mathematics and Computer Science** with a minor in **Finance**. I'm seeking **full-time data science roles** after graduation. This portfolio collects my work in R, statistical analysis, and data visualization.
+
+<span class="intro-tools">**Tools:** R · Python · SQL · Snowflake · Quarto · GitHub</span>
+
+[LinkedIn](https://www.linkedin.com/in/isai-quinones-a147b42b8){.btn .btn-primary} [GitHub](https://github.com/iquinones2){.btn .btn-outline-primary} [Email me](mailto:iq765019@gmail.com){.btn .btn-outline-primary}
+:::
+
+## Projects
