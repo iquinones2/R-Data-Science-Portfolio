@@ -166,5 +166,68 @@
     "title": "My Dog",
     "section": "",
     "text": "This is my Dog.\nHe is a Cane Corso and Poodle mix breed. He is listed as a canoodle which is funny to pronounce."
+  },
+  {
+    "objectID": "posts/Salem-Web-Blog/Salem.html",
+    "href": "posts/Salem-Web-Blog/Salem.html",
+    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
+    "section": "",
+    "text": "Salem homepage"
+  },
+  {
+    "objectID": "posts/Salem-Web-Blog/Salem.html#overview",
+    "href": "posts/Salem-Web-Blog/Salem.html#overview",
+    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
+    "section": "Overview",
+    "text": "Overview\nSalem Custom Screen Printing is a small t-shirt screening business, and I’m building its website as a Small Business Digital Growth Initiative. The site is a blog-style home for the business’s designs, sales, and events, and it’s live here: Salem Blog."
+  },
+  {
+    "objectID": "posts/Salem-Web-Blog/Salem.html#more-than-a-client",
+    "href": "posts/Salem-Web-Blog/Salem.html#more-than-a-client",
+    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
+    "section": "More Than a Client",
+    "text": "More Than a Client\nThis isn’t a paid job, and the business owner isn’t just a client to me. I chose to take this on because I want to see Salem grow, and because I wanted to build something real for someone I care about. That also means we talk openly: the owner tells me what the business needs, I translate it into the site, and I show progress along the way so the project stays tied to what actually matters to them."
+  },
+  {
+    "objectID": "posts/Salem-Web-Blog/Salem.html#the-problem",
+    "href": "posts/Salem-Web-Blog/Salem.html#the-problem",
+    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
+    "section": "The Problem",
+    "text": "The Problem\nSalem needed a stronger online presence to promote the brand and keep customers coming back. Designs, sales, and events were shared in conversations and photos, with no central place for people to see what Salem offers."
+  },
+  {
+    "objectID": "posts/Salem-Web-Blog/Salem.html#what-ive-built-so-far",
+    "href": "posts/Salem-Web-Blog/Salem.html#what-ive-built-so-far",
+    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
+    "section": "What I’ve Built So Far",
+    "text": "What I’ve Built So Far\n\nA live, branded website built with Quarto and hosted on GitHub Pages, featuring Salem’s logo and a clean homepage.\nA blog with four posts: the business’s mission, a recap of the Rooted event, a Family Christmas Bundle sale, and an October sale.\nOrganization for visitors: posts are tagged by category (Mission, Rooted, Sale) and can be sorted by date or title.\nAn About page and a “Join the Salem list” page where visitors can sign up for updates.\nSocial links to Salem’s Instagram and Facebook.\nA complete Solution Design Worksheet mapping the full system: pages, data, automations, AI features, third-party services, hosting, a system diagram, and a step-by-step walkthrough of the subscriber flow.\n\nI started the project in Posit Cloud and moved it to VS Code with Git and GitHub, so I can version my work and push updates directly to the live site.\n\n\n\nThe main page on the Salem site"
+  },
+  {
+    "objectID": "posts/Salem-Web-Blog/Salem.html#my-role",
+    "href": "posts/Salem-Web-Blog/Salem.html#my-role",
+    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
+    "section": "My Role",
+    "text": "My Role\nI’m the sole developer and maintainer. I handle the design, the code, the publishing, and all communication with the business owner, from gathering content to showing progress and getting feedback."
+  },
+  {
+    "objectID": "posts/Salem-Web-Blog/Salem.html#challenges-and-what-i-learned",
+    "href": "posts/Salem-Web-Blog/Salem.html#challenges-and-what-i-learned",
+    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
+    "section": "Challenges and What I Learned",
+    "text": "Challenges and What I Learned\n\nMoving from Posit Cloud to VS Code\nTurning the owner’s needs into a plan: Working through the design worksheet forced me to ask what the business actually needs, such as customer contact info for deals and news, rather than just what would be fun to build."
+  },
+  {
+    "objectID": "posts/Salem-Web-Blog/Salem.html#whats-next",
+    "href": "posts/Salem-Web-Blog/Salem.html#whats-next",
+    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
+    "section": "What’s Next",
+    "text": "What’s Next\nBased on my design, the next steps are:\n\nEmail subscriptions with automation: When someone subscribes, an automation will save their info to a Google Sheet, add them to a newsletter list, send a welcome email, and notify the owner. Every email will include an unsubscribe link, and new blog posts will be emailed automatically through the site’s RSS feed.\nAI-powered helpers: A customer FAQ assistant (minimum orders, pricing, how to order) and a quote assistant that turns a plain-English request into a readable order.\nCustomization and ordering: Letting customers browse and customize shirts, with payment, and eventually a drag-and-drop designer.\nSocial media integration and an expanded page structure as the library of designs and events grows."
+  },
+  {
+    "objectID": "posts/Salem-Web-Blog/Salem.html#links",
+    "href": "posts/Salem-Web-Blog/Salem.html#links",
+    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
+    "section": "Links",
+    "text": "Links\n\nLive site: iquinones2.github.io/Salem-Blog\nRepository: github.com/iquinones2/Salem-Blog"
   }
 ]
