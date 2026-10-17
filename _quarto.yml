@@ -16,5 +16,8 @@ format:
     theme: lux
     css: styles.css
 
+execute:
+  freeze: auto
+
 editor: visual
 
