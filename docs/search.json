@@ -1,47 +1,5 @@
 [
   {
-    "objectID": "posts/cool_ggplot_work/index.html",
-    "href": "posts/cool_ggplot_work/index.html",
-    "title": "R Graphs",
-    "section": "",
-    "text": "On Aug. 17th through the 21st I took a week long crash course on how to use R for Data Science.\n\nlibrary(tidyverse)\n\nggplot(\n  data = mpg, \n  mapping = aes(\n    x = cty,\n    y = hwy\n  )\n)+ geom_point()\n\n\n\n\n\n\n\n\nThis is great, but one thing we learned about is the importance of clear labels using the lab functions.\n\nlibrary(tidyverse)\n\nggplot(\n  data = mpg, \n  mapping = aes(\n    x = cty,\n    y = hwy\n  )\n)+ geom_point() + \n  geom_smooth() + \n  labs(\n    x = \"City Milage\",\n    y = \"Highway Milage\", \n    title = \"City vs Highway\"\n  )\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
-  },
-  {
-    "objectID": "posts/Stock&Bond/index.html",
-    "href": "posts/Stock&Bond/index.html",
-    "title": "The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis",
-    "section": "",
-    "text": "This project examines the relationship between the U.S. stock market and the 10-year U.S. Treasury yield from 2000 through 2026. The S&P 500 is used to represent stock-market performance, while the 10-year Treasury yield represents conditions in the U.S. bond market. Historical S&P 500 data were obtained through Yahoo Finance, while Treasury yield data were collected from the Federal Reserve Bank of St. Louis Federal Reserve Economic Data (FRED). Using R, I analyze the relationship between daily S&P 500 returns and changes in the 10-year Treasury yield, with particular attention to how this relationship changed during the 2008–2009 Financial Crisis and the 2020 COVID-19 market shock.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nlibrary(quantmod)\nlibrary(fredr)\nlibrary(tidyverse)\n\nmodel1 &lt;- lm(\n  sp500_return ~ treasury10_change, \n  data = stock_bond_clean\n)\n\nsummary(model1)\n\n\nCall:\nlm(formula = sp500_return ~ treasury10_change, data = stock_bond_clean)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.107593 -0.005202  0.000261  0.005624  0.101562 \n\nCoefficients:\n                   Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       0.0003357  0.0001421   2.363   0.0182 *  \ntreasury10_change 0.0599212  0.0024619  24.339   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01155 on 6598 degrees of freedom\nMultiple R-squared:  0.08239,   Adjusted R-squared:  0.08225 \nF-statistic: 592.4 on 1 and 6598 DF,  p-value: &lt; 2.2e-16\n\n\nA linear regression of daily S&P 500 returns on daily changes in the 10-year Treasury yield from 2000–2026 found a statistically significant positive association (β = 0.060, p &lt; 0.001). However, the model’s R² of 0.082 indicates that Treasury yield changes alone explain only a small portion of daily equity-return variation.\n\n\n\n\n\nCall:\nlm(formula = sp500_return ~ treasury10_change, data = financial_crisis)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.087186 -0.009718  0.000280  0.010076  0.098764 \n\nCoefficients:\n                    Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       -0.0003372  0.0008841  -0.381    0.703    \ntreasury10_change  0.0946351  0.0101464   9.327   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01971 on 495 degrees of freedom\nMultiple R-squared:  0.1495,    Adjusted R-squared:  0.1478 \nF-statistic: 86.99 on 1 and 495 DF,  p-value: &lt; 2.2e-16\n\n\n\n\n\nCall:\nlm(formula = sp500_return ~ treasury10_change, data = covid)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.108047 -0.006451  0.001057  0.006853  0.079937 \n\nCoefficients:\n                  Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       0.001459   0.001218   1.198    0.232    \ntreasury10_change 0.191246   0.022247   8.597 9.54e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01918 on 247 degrees of freedom\nMultiple R-squared:  0.2303,    Adjusted R-squared:  0.2272 \nF-statistic:  73.9 on 1 and 247 DF,  p-value: 9.538e-16\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nThe relationship between S&P 500 returns and changes in 10-year Treasury yields strengthened during periods of major financial stress. This is reflected in the increase in R² from 0.082 during 2000–2026 to 0.1495 during the 2008–2009 Financial Crisis and 0.2303 during the 2020 COVID-19 period. Thus, changes in Treasury yields explained a greater proportion of the variation in daily S&P 500 returns during both crises."
-  },
-  {
-    "objectID": "posts/Stock&Bond/index.html#how-did-the-relationship-between-u.s.-stock-market-returns-and-changes-in-10-year-treasury-yields-differ-between-the-20082009-financial-crisis-and-the-2020-covid-19-market-shock",
-    "href": "posts/Stock&Bond/index.html#how-did-the-relationship-between-u.s.-stock-market-returns-and-changes-in-10-year-treasury-yields-differ-between-the-20082009-financial-crisis-and-the-2020-covid-19-market-shock",
-    "title": "The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis",
-    "section": "",
-    "text": "Call:\nlm(formula = sp500_return ~ treasury10_change, data = financial_crisis)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.087186 -0.009718  0.000280  0.010076  0.098764 \n\nCoefficients:\n                    Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       -0.0003372  0.0008841  -0.381    0.703    \ntreasury10_change  0.0946351  0.0101464   9.327   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01971 on 495 degrees of freedom\nMultiple R-squared:  0.1495,    Adjusted R-squared:  0.1478 \nF-statistic: 86.99 on 1 and 495 DF,  p-value: &lt; 2.2e-16\n\n\n\n\n\nCall:\nlm(formula = sp500_return ~ treasury10_change, data = covid)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.108047 -0.006451  0.001057  0.006853  0.079937 \n\nCoefficients:\n                  Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       0.001459   0.001218   1.198    0.232    \ntreasury10_change 0.191246   0.022247   8.597 9.54e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01918 on 247 degrees of freedom\nMultiple R-squared:  0.2303,    Adjusted R-squared:  0.2272 \nF-statistic:  73.9 on 1 and 247 DF,  p-value: 9.538e-16\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nThe relationship between S&P 500 returns and changes in 10-year Treasury yields strengthened during periods of major financial stress. This is reflected in the increase in R² from 0.082 during 2000–2026 to 0.1495 during the 2008–2009 Financial Crisis and 0.2303 during the 2020 COVID-19 period. Thus, changes in Treasury yields explained a greater proportion of the variation in daily S&P 500 returns during both crises."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Isai Quiñones | Data Science Portfolio",
-    "section": "",
-    "text": "Senior at Dominican University (graduating May 2027), double majoring in Data Science/Mathematics and Computer Science with a minor in Finance. I’m seeking full-time data science roles after graduation. This portfolio collects my work in R, statistical analysis, and data visualization.\nTools: R · Python · SQL · Snowflake · Quarto · GitHub\nLinkedIn GitHub Email me"
-  },
-  {
-    "objectID": "index.html#hi-im-isai",
-    "href": "index.html#hi-im-isai",
-    "title": "Isai Quiñones | Data Science Portfolio",
-    "section": "",
-    "text": "Senior at Dominican University (graduating May 2027), double majoring in Data Science/Mathematics and Computer Science with a minor in Finance. I’m seeking full-time data science roles after graduation. This portfolio collects my work in R, statistical analysis, and data visualization.\nTools: R · Python · SQL · Snowflake · Quarto · GitHub\nLinkedIn GitHub Email me"
-  },
-  {
-    "objectID": "index.html#projects",
-    "href": "index.html#projects",
-    "title": "Isai Quiñones | Data Science Portfolio",
-    "section": "Projects",
-    "text": "Projects"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -75,6 +33,132 @@
     "title": "About",
     "section": "What I’m Interested In",
     "text": "What I’m Interested In\nI’m particularly interested in data science, data analytics, machine learning, and using data to support business decisions.\nI’m currently building this portfolio to showcase projects involving data cleaning, exploratory data analysis, visualization, statistical modeling, and machine learning using R and other data science tools."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Isai Quiñones | Data Science Portfolio",
+    "section": "",
+    "text": "Senior at Dominican University (graduating May 2027), double majoring in Data Science/Mathematics and Computer Science with a minor in Finance. I’m seeking full-time data science roles after graduation. This portfolio collects my work in R, statistical analysis, and data visualization.\nTools: R · Python · SQL · Snowflake · Quarto · GitHub\nLinkedIn GitHub Email me"
+  },
+  {
+    "objectID": "index.html#hi-im-isai",
+    "href": "index.html#hi-im-isai",
+    "title": "Isai Quiñones | Data Science Portfolio",
+    "section": "",
+    "text": "Senior at Dominican University (graduating May 2027), double majoring in Data Science/Mathematics and Computer Science with a minor in Finance. I’m seeking full-time data science roles after graduation. This portfolio collects my work in R, statistical analysis, and data visualization.\nTools: R · Python · SQL · Snowflake · Quarto · GitHub\nLinkedIn GitHub Email me"
+  },
+  {
+    "objectID": "index.html#projects",
+    "href": "index.html#projects",
+    "title": "Isai Quiñones | Data Science Portfolio",
+    "section": "Projects",
+    "text": "Projects"
+  },
+  {
+    "objectID": "posts/cool_ggplot_work/index.html",
+    "href": "posts/cool_ggplot_work/index.html",
+    "title": "R Graphs",
+    "section": "",
+    "text": "On Aug. 17th through the 21st I took a week long crash course on how to use R for Data Science.\n\nlibrary(tidyverse)\n\nggplot(\n  data = mpg, \n  mapping = aes(\n    x = cty,\n    y = hwy\n  )\n)+ geom_point()\n\n\n\n\n\n\n\n\nThis is great, but one thing we learned about is the importance of clear labels using the lab functions.\n\nlibrary(tidyverse)\n\nggplot(\n  data = mpg, \n  mapping = aes(\n    x = cty,\n    y = hwy\n  )\n)+ geom_point() + \n  geom_smooth() + \n  labs(\n    x = \"City Milage\",\n    y = \"Highway Milage\", \n    title = \"City vs Highway\"\n  )\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
+  },
+  {
+    "objectID": "posts/myDog/index.html",
+    "href": "posts/myDog/index.html",
+    "title": "My Dog",
+    "section": "",
+    "text": "This is my Dog.\nHe is a Cane Corso and Poodle mix breed. He is listed as a canoodle which is funny to pronounce."
+  },
+  {
+    "objectID": "posts/Stock&Bond/index.html",
+    "href": "posts/Stock&Bond/index.html",
+    "title": "The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis",
+    "section": "",
+    "text": "This project examines the relationship between the U.S. stock market and the 10-year U.S. Treasury yield from 2000 through 2026. The S&P 500 is used to represent stock-market performance, while the 10-year Treasury yield represents conditions in the U.S. bond market. Historical S&P 500 data were obtained through Yahoo Finance, while Treasury yield data were collected from the Federal Reserve Bank of St. Louis Federal Reserve Economic Data (FRED). Using R, I analyze the relationship between daily S&P 500 returns and changes in the 10-year Treasury yield, with particular attention to how this relationship changed during the 2008–2009 Financial Crisis and the 2020 COVID-19 market shock.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nlibrary(quantmod)\nlibrary(fredr)\nlibrary(tidyverse)\n\nmodel1 &lt;- lm(\n  sp500_return ~ treasury10_change, \n  data = stock_bond_clean\n)\n\nsummary(model1)\n\n\nCall:\nlm(formula = sp500_return ~ treasury10_change, data = stock_bond_clean)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.107593 -0.005202  0.000261  0.005624  0.101562 \n\nCoefficients:\n                   Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       0.0003357  0.0001421   2.363   0.0182 *  \ntreasury10_change 0.0599212  0.0024619  24.339   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01155 on 6598 degrees of freedom\nMultiple R-squared:  0.08239,   Adjusted R-squared:  0.08225 \nF-statistic: 592.4 on 1 and 6598 DF,  p-value: &lt; 2.2e-16\n\n\nA linear regression of daily S&P 500 returns on daily changes in the 10-year Treasury yield from 2000–2026 found a statistically significant positive association (β = 0.060, p &lt; 0.001). However, the model’s R² of 0.082 indicates that Treasury yield changes alone explain only a small portion of daily equity-return variation.\n\n\n\n\n\nCall:\nlm(formula = sp500_return ~ treasury10_change, data = financial_crisis)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.087186 -0.009718  0.000280  0.010076  0.098764 \n\nCoefficients:\n                    Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       -0.0003372  0.0008841  -0.381    0.703    \ntreasury10_change  0.0946351  0.0101464   9.327   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01971 on 495 degrees of freedom\nMultiple R-squared:  0.1495,    Adjusted R-squared:  0.1478 \nF-statistic: 86.99 on 1 and 495 DF,  p-value: &lt; 2.2e-16\n\n\n\n\n\nCall:\nlm(formula = sp500_return ~ treasury10_change, data = covid)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.108047 -0.006451  0.001057  0.006853  0.079937 \n\nCoefficients:\n                  Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       0.001459   0.001218   1.198    0.232    \ntreasury10_change 0.191246   0.022247   8.597 9.54e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01918 on 247 degrees of freedom\nMultiple R-squared:  0.2303,    Adjusted R-squared:  0.2272 \nF-statistic:  73.9 on 1 and 247 DF,  p-value: 9.538e-16\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nThe relationship between S&P 500 returns and changes in 10-year Treasury yields strengthened during periods of major financial stress. This is reflected in the increase in R² from 0.082 during 2000–2026 to 0.1495 during the 2008–2009 Financial Crisis and 0.2303 during the 2020 COVID-19 period. Thus, changes in Treasury yields explained a greater proportion of the variation in daily S&P 500 returns during both crises."
+  },
+  {
+    "objectID": "posts/Stock&Bond/index.html#how-did-the-relationship-between-u.s.-stock-market-returns-and-changes-in-10-year-treasury-yields-differ-between-the-20082009-financial-crisis-and-the-2020-covid-19-market-shock",
+    "href": "posts/Stock&Bond/index.html#how-did-the-relationship-between-u.s.-stock-market-returns-and-changes-in-10-year-treasury-yields-differ-between-the-20082009-financial-crisis-and-the-2020-covid-19-market-shock",
+    "title": "The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis",
+    "section": "",
+    "text": "Call:\nlm(formula = sp500_return ~ treasury10_change, data = financial_crisis)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.087186 -0.009718  0.000280  0.010076  0.098764 \n\nCoefficients:\n                    Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       -0.0003372  0.0008841  -0.381    0.703    \ntreasury10_change  0.0946351  0.0101464   9.327   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01971 on 495 degrees of freedom\nMultiple R-squared:  0.1495,    Adjusted R-squared:  0.1478 \nF-statistic: 86.99 on 1 and 495 DF,  p-value: &lt; 2.2e-16\n\n\n\n\n\nCall:\nlm(formula = sp500_return ~ treasury10_change, data = covid)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.108047 -0.006451  0.001057  0.006853  0.079937 \n\nCoefficients:\n                  Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       0.001459   0.001218   1.198    0.232    \ntreasury10_change 0.191246   0.022247   8.597 9.54e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01918 on 247 degrees of freedom\nMultiple R-squared:  0.2303,    Adjusted R-squared:  0.2272 \nF-statistic:  73.9 on 1 and 247 DF,  p-value: 9.538e-16\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nThe relationship between S&P 500 returns and changes in 10-year Treasury yields strengthened during periods of major financial stress. This is reflected in the increase in R² from 0.082 during 2000–2026 to 0.1495 during the 2008–2009 Financial Crisis and 0.2303 during the 2020 COVID-19 period. Thus, changes in Treasury yields explained a greater proportion of the variation in daily S&P 500 returns during both crises."
+  },
+  {
+    "objectID": "posts/Salem-Web-Blog/Salem.html",
+    "href": "posts/Salem-Web-Blog/Salem.html",
+    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
+    "section": "",
+    "text": "Salem homepage"
+  },
+  {
+    "objectID": "posts/Salem-Web-Blog/Salem.html#overview",
+    "href": "posts/Salem-Web-Blog/Salem.html#overview",
+    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
+    "section": "Overview",
+    "text": "Overview\nSalem Custom Screen Printing is a small t-shirt screening business, and I’m building its website as a Small Business Digital Growth Initiative. The site is a blog-style home for the business’s designs, sales, and events, and it’s live here: Salem Blog."
+  },
+  {
+    "objectID": "posts/Salem-Web-Blog/Salem.html#more-than-a-client",
+    "href": "posts/Salem-Web-Blog/Salem.html#more-than-a-client",
+    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
+    "section": "More Than a Client",
+    "text": "More Than a Client\nThis isn’t a paid job, and the business owner isn’t just a client to me. I chose to take this on because I want to see Salem grow, and because I wanted to build something real for someone I care about. That also means we talk openly: the owner tells me what the business needs, I translate it into the site, and I show progress along the way so the project stays tied to what actually matters to them."
+  },
+  {
+    "objectID": "posts/Salem-Web-Blog/Salem.html#the-problem",
+    "href": "posts/Salem-Web-Blog/Salem.html#the-problem",
+    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
+    "section": "The Problem",
+    "text": "The Problem\nSalem needed a stronger online presence to promote the brand and keep customers coming back. Designs, sales, and events were shared in conversations and photos, with no central place for people to see what Salem offers."
+  },
+  {
+    "objectID": "posts/Salem-Web-Blog/Salem.html#what-ive-built-so-far",
+    "href": "posts/Salem-Web-Blog/Salem.html#what-ive-built-so-far",
+    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
+    "section": "What I’ve Built So Far",
+    "text": "What I’ve Built So Far\n\nA live, branded website built with Quarto and hosted on GitHub Pages, featuring Salem’s logo and a clean homepage.\nA blog with four posts: the business’s mission, a recap of the Rooted event, a Family Christmas Bundle sale, and an October sale.\nOrganization for visitors: posts are tagged by category (Mission, Rooted, Sale) and can be sorted by date or title.\nAn About page and a “Join the Salem list” page where visitors can sign up for updates.\nSocial links to Salem’s Instagram and Facebook.\nA complete Solution Design Worksheet mapping the full system: pages, data, automations, AI features, third-party services, hosting, a system diagram, and a step-by-step walkthrough of the subscriber flow.\n\nI started the project in Posit Cloud and moved it to VS Code with Git and GitHub, so I can version my work and push updates directly to the live site.\n\n\n\nThe main page on the Salem site"
+  },
+  {
+    "objectID": "posts/Salem-Web-Blog/Salem.html#my-role",
+    "href": "posts/Salem-Web-Blog/Salem.html#my-role",
+    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
+    "section": "My Role",
+    "text": "My Role\nI’m the sole developer and maintainer. I handle the design, the code, the publishing, and all communication with the business owner, from gathering content to showing progress and getting feedback."
+  },
+  {
+    "objectID": "posts/Salem-Web-Blog/Salem.html#challenges-and-what-i-learned",
+    "href": "posts/Salem-Web-Blog/Salem.html#challenges-and-what-i-learned",
+    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
+    "section": "Challenges and What I Learned",
+    "text": "Challenges and What I Learned\n\nMoving from Posit Cloud to VS Code\nTurning the owner’s needs into a plan: Working through the design worksheet forced me to ask what the business actually needs, such as customer contact info for deals and news, rather than just what would be fun to build."
+  },
+  {
+    "objectID": "posts/Salem-Web-Blog/Salem.html#whats-next",
+    "href": "posts/Salem-Web-Blog/Salem.html#whats-next",
+    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
+    "section": "What’s Next",
+    "text": "What’s Next\nBased on my design, the next steps are:\n\nEmail subscriptions with automation: When someone subscribes, an automation will save their info to a Google Sheet, add them to a newsletter list, send a welcome email, and notify the owner. Every email will include an unsubscribe link, and new blog posts will be emailed automatically through the site’s RSS feed.\nAI-powered helpers: A customer FAQ assistant (minimum orders, pricing, how to order) and a quote assistant that turns a plain-English request into a readable order.\nCustomization and ordering: Letting customers browse and customize shirts, with payment, and eventually a drag-and-drop designer.\nSocial media integration and an expanded page structure as the library of designs and events grows."
+  },
+  {
+    "objectID": "posts/Salem-Web-Blog/Salem.html#links",
+    "href": "posts/Salem-Web-Blog/Salem.html#links",
+    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
+    "section": "Links",
+    "text": "Links\n\nLive site: iquinones2.github.io/Salem-Blog\nRepository: github.com/iquinones2/Salem-Blog"
+  },
+  {
+    "objectID": "posts/Stock-Bond/index.html",
+    "href": "posts/Stock-Bond/index.html",
+    "title": "The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis",
+    "section": "",
+    "text": "This project examines the relationship between the U.S. stock market and the 10-year U.S. Treasury yield from 2000 through 2026. The S&P 500 is used to represent stock-market performance, while the 10-year Treasury yield represents conditions in the U.S. bond market. Historical S&P 500 data were obtained through Yahoo Finance, while Treasury yield data were collected from the Federal Reserve Bank of St. Louis Federal Reserve Economic Data (FRED). Using R, I analyze the relationship between daily S&P 500 returns and changes in the 10-year Treasury yield, with particular attention to how this relationship changed during the 2008–2009 Financial Crisis and the 2020 COVID-19 market shock.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nlibrary(quantmod)\nlibrary(fredr)\nlibrary(tidyverse)\n\nmodel1 &lt;- lm(\n  sp500_return ~ treasury10_change, \n  data = stock_bond_clean\n)\n\nsummary(model1)\n\n\nCall:\nlm(formula = sp500_return ~ treasury10_change, data = stock_bond_clean)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.107593 -0.005202  0.000261  0.005624  0.101562 \n\nCoefficients:\n                   Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       0.0003357  0.0001421   2.363   0.0182 *  \ntreasury10_change 0.0599212  0.0024619  24.339   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01155 on 6598 degrees of freedom\nMultiple R-squared:  0.08239,   Adjusted R-squared:  0.08225 \nF-statistic: 592.4 on 1 and 6598 DF,  p-value: &lt; 2.2e-16\n\n\nA linear regression of daily S&P 500 returns on daily changes in the 10-year Treasury yield from 2000–2026 found a statistically significant positive association (β = 0.060, p &lt; 0.001). However, the model’s R² of 0.082 indicates that Treasury yield changes alone explain only a small portion of daily equity-return variation.\n\n\n\n\n\nCall:\nlm(formula = sp500_return ~ treasury10_change, data = financial_crisis)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.087186 -0.009718  0.000280  0.010076  0.098764 \n\nCoefficients:\n                    Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       -0.0003372  0.0008841  -0.381    0.703    \ntreasury10_change  0.0946351  0.0101464   9.327   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01971 on 495 degrees of freedom\nMultiple R-squared:  0.1495,    Adjusted R-squared:  0.1478 \nF-statistic: 86.99 on 1 and 495 DF,  p-value: &lt; 2.2e-16\n\n\n\n\n\nCall:\nlm(formula = sp500_return ~ treasury10_change, data = covid)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.108047 -0.006451  0.001057  0.006853  0.079937 \n\nCoefficients:\n                  Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       0.001459   0.001218   1.198    0.232    \ntreasury10_change 0.191246   0.022247   8.597 9.54e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01918 on 247 degrees of freedom\nMultiple R-squared:  0.2303,    Adjusted R-squared:  0.2272 \nF-statistic:  73.9 on 1 and 247 DF,  p-value: 9.538e-16\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nThe relationship between S&P 500 returns and changes in 10-year Treasury yields strengthened during periods of major financial stress. This is reflected in the increase in R² from 0.082 during 2000–2026 to 0.1495 during the 2008–2009 Financial Crisis and 0.2303 during the 2020 COVID-19 period. Thus, changes in Treasury yields explained a greater proportion of the variation in daily S&P 500 returns during both crises."
+  },
+  {
+    "objectID": "posts/Stock-Bond/index.html#how-did-the-relationship-between-u.s.-stock-market-returns-and-changes-in-10-year-treasury-yields-differ-between-the-20082009-financial-crisis-and-the-2020-covid-19-market-shock",
+    "href": "posts/Stock-Bond/index.html#how-did-the-relationship-between-u.s.-stock-market-returns-and-changes-in-10-year-treasury-yields-differ-between-the-20082009-financial-crisis-and-the-2020-covid-19-market-shock",
+    "title": "The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis",
+    "section": "",
+    "text": "Call:\nlm(formula = sp500_return ~ treasury10_change, data = financial_crisis)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.087186 -0.009718  0.000280  0.010076  0.098764 \n\nCoefficients:\n                    Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       -0.0003372  0.0008841  -0.381    0.703    \ntreasury10_change  0.0946351  0.0101464   9.327   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01971 on 495 degrees of freedom\nMultiple R-squared:  0.1495,    Adjusted R-squared:  0.1478 \nF-statistic: 86.99 on 1 and 495 DF,  p-value: &lt; 2.2e-16\n\n\n\n\n\nCall:\nlm(formula = sp500_return ~ treasury10_change, data = covid)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.108047 -0.006451  0.001057  0.006853  0.079937 \n\nCoefficients:\n                  Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       0.001459   0.001218   1.198    0.232    \ntreasury10_change 0.191246   0.022247   8.597 9.54e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.01918 on 247 degrees of freedom\nMultiple R-squared:  0.2303,    Adjusted R-squared:  0.2272 \nF-statistic:  73.9 on 1 and 247 DF,  p-value: 9.538e-16\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nThe relationship between S&P 500 returns and changes in 10-year Treasury yields strengthened during periods of major financial stress. This is reflected in the increase in R² from 0.082 during 2000–2026 to 0.1495 during the 2008–2009 Financial Crisis and 0.2303 during the 2020 COVID-19 period. Thus, changes in Treasury yields explained a greater proportion of the variation in daily S&P 500 returns during both crises."
   },
   {
     "objectID": "readme.html",
@@ -159,75 +243,5 @@
     "title": "Using this quarto course blog template",
     "section": "",
     "text": "See this growing list of quarto resources for much, much more:\nhttps://github.com/mcanouil/awesome-quarto"
-  },
-  {
-    "objectID": "posts/myDog/index.html",
-    "href": "posts/myDog/index.html",
-    "title": "My Dog",
-    "section": "",
-    "text": "This is my Dog.\nHe is a Cane Corso and Poodle mix breed. He is listed as a canoodle which is funny to pronounce."
-  },
-  {
-    "objectID": "posts/Salem-Web-Blog/Salem.html",
-    "href": "posts/Salem-Web-Blog/Salem.html",
-    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
-    "section": "",
-    "text": "Salem homepage"
-  },
-  {
-    "objectID": "posts/Salem-Web-Blog/Salem.html#overview",
-    "href": "posts/Salem-Web-Blog/Salem.html#overview",
-    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
-    "section": "Overview",
-    "text": "Overview\nSalem Custom Screen Printing is a small t-shirt screening business, and I’m building its website as a Small Business Digital Growth Initiative. The site is a blog-style home for the business’s designs, sales, and events, and it’s live here: Salem Blog."
-  },
-  {
-    "objectID": "posts/Salem-Web-Blog/Salem.html#more-than-a-client",
-    "href": "posts/Salem-Web-Blog/Salem.html#more-than-a-client",
-    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
-    "section": "More Than a Client",
-    "text": "More Than a Client\nThis isn’t a paid job, and the business owner isn’t just a client to me. I chose to take this on because I want to see Salem grow, and because I wanted to build something real for someone I care about. That also means we talk openly: the owner tells me what the business needs, I translate it into the site, and I show progress along the way so the project stays tied to what actually matters to them."
-  },
-  {
-    "objectID": "posts/Salem-Web-Blog/Salem.html#the-problem",
-    "href": "posts/Salem-Web-Blog/Salem.html#the-problem",
-    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
-    "section": "The Problem",
-    "text": "The Problem\nSalem needed a stronger online presence to promote the brand and keep customers coming back. Designs, sales, and events were shared in conversations and photos, with no central place for people to see what Salem offers."
-  },
-  {
-    "objectID": "posts/Salem-Web-Blog/Salem.html#what-ive-built-so-far",
-    "href": "posts/Salem-Web-Blog/Salem.html#what-ive-built-so-far",
-    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
-    "section": "What I’ve Built So Far",
-    "text": "What I’ve Built So Far\n\nA live, branded website built with Quarto and hosted on GitHub Pages, featuring Salem’s logo and a clean homepage.\nA blog with four posts: the business’s mission, a recap of the Rooted event, a Family Christmas Bundle sale, and an October sale.\nOrganization for visitors: posts are tagged by category (Mission, Rooted, Sale) and can be sorted by date or title.\nAn About page and a “Join the Salem list” page where visitors can sign up for updates.\nSocial links to Salem’s Instagram and Facebook.\nA complete Solution Design Worksheet mapping the full system: pages, data, automations, AI features, third-party services, hosting, a system diagram, and a step-by-step walkthrough of the subscriber flow.\n\nI started the project in Posit Cloud and moved it to VS Code with Git and GitHub, so I can version my work and push updates directly to the live site.\n\n\n\nThe main page on the Salem site"
-  },
-  {
-    "objectID": "posts/Salem-Web-Blog/Salem.html#my-role",
-    "href": "posts/Salem-Web-Blog/Salem.html#my-role",
-    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
-    "section": "My Role",
-    "text": "My Role\nI’m the sole developer and maintainer. I handle the design, the code, the publishing, and all communication with the business owner, from gathering content to showing progress and getting feedback."
-  },
-  {
-    "objectID": "posts/Salem-Web-Blog/Salem.html#challenges-and-what-i-learned",
-    "href": "posts/Salem-Web-Blog/Salem.html#challenges-and-what-i-learned",
-    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
-    "section": "Challenges and What I Learned",
-    "text": "Challenges and What I Learned\n\nMoving from Posit Cloud to VS Code\nTurning the owner’s needs into a plan: Working through the design worksheet forced me to ask what the business actually needs, such as customer contact info for deals and news, rather than just what would be fun to build."
-  },
-  {
-    "objectID": "posts/Salem-Web-Blog/Salem.html#whats-next",
-    "href": "posts/Salem-Web-Blog/Salem.html#whats-next",
-    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
-    "section": "What’s Next",
-    "text": "What’s Next\nBased on my design, the next steps are:\n\nEmail subscriptions with automation: When someone subscribes, an automation will save their info to a Google Sheet, add them to a newsletter list, send a welcome email, and notify the owner. Every email will include an unsubscribe link, and new blog posts will be emailed automatically through the site’s RSS feed.\nAI-powered helpers: A customer FAQ assistant (minimum orders, pricing, how to order) and a quote assistant that turns a plain-English request into a readable order.\nCustomization and ordering: Letting customers browse and customize shirts, with payment, and eventually a drag-and-drop designer.\nSocial media integration and an expanded page structure as the library of designs and events grows."
-  },
-  {
-    "objectID": "posts/Salem-Web-Blog/Salem.html#links",
-    "href": "posts/Salem-Web-Blog/Salem.html#links",
-    "title": "Salem Web-Blog: A Small Business Digital Growth Initiative",
-    "section": "Links",
-    "text": "Links\n\nLive site: iquinones2.github.io/Salem-Blog\nRepository: github.com/iquinones2/Salem-Blog"
   }
 ]
