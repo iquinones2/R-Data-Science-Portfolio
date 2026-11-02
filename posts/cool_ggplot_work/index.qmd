@@ -3,9 +3,17 @@ title: "R Graphs"
 author: "Isai Quinones"
 date: "2026-8-20"
 categories: [R,Code,Data Analytics]
+description: "Charts and lessons from a week-long R for Data Science crash course."
 ---
 
 On Aug. 17th through the 21st I took a week long crash course on how to use R for Data Science.
+
+```{r}
+#| label: setup
+#| include: false
+source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "../.."), "R/theme_isai.R"))
+use_isai_defaults()
+```
 
 ```{r}
 #| label: MPG in city vs highway

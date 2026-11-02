@@ -6,9 +6,15 @@ categories: [R, Code, Data Analytics, Data Statistics]
 image: market.jpg
 ---
 
-# The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis
 
 This project examines the relationship between the U.S. stock market and the 10-year U.S. Treasury yield from 2000 through 2026. The S&P 500 is used to represent stock-market performance, while the 10-year Treasury yield represents conditions in the U.S. bond market. Historical S&P 500 data were obtained through Yahoo Finance, while Treasury yield data were collected from the Federal Reserve Bank of St. Louis Federal Reserve Economic Data (FRED). Using R, I analyze the relationship between daily S&P 500 returns and changes in the 10-year Treasury yield, with particular attention to how this relationship changed during the 2008–2009 Financial Crisis and the 2020 COVID-19 market shock.
+
+```{r}
+#| label: setup
+#| include: false
+source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "../.."), "R/theme_isai.R"))
+use_isai_defaults()
+```
 
 ```{r}
 #| label: Loaded Data
@@ -103,6 +109,7 @@ ggplot(stock_bond, aes(x = date, y = treasury10)) +
 
 ```{r}
 #| label: Scatterplot
+#| message: false
 #| echo: false
 library(quantmod)
 library(fredr)
@@ -257,6 +264,7 @@ comparison
 
 ```{r}
 #| label: FinC_graph
+#| message: false
 #| echo: false
 ggplot(
   financial_crisis_clean,
@@ -277,6 +285,7 @@ ggplot(
 
 ```{r}
 #| label: CovidGraph
+#| message: false
 #| echo: false
 ggplot(
   covid_clean,

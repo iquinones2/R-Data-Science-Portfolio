@@ -3,21 +3,31 @@ project:
   output-dir: docs
 
 website:
-  title: "Isai's Portfolio"
+  title: "Isai Quiñones"
+  description: "Data science and finance portfolio: statistical analysis and visualization in R."
   navbar:
     right:
+      - text: Work
+        href: index.qmd
       - about.qmd
       - icon: github
-        href: https://github.com/iquinones2/R-Data-Science-Portfolio.git
+        href: https://github.com/iquinones2
+        aria-label: GitHub
       - icon: linkedin
         href: https://www.linkedin.com/in/isai-quinones-a147b42b8
+        aria-label: LinkedIn
 format:
   html:
-    theme: lux
+    theme: [default, theme/isai.scss]
     css: styles.css
+    highlight-style: github
+    fig-dpi: 200
+
+knitr:
+  opts_chunk:
+    dev: ragg_png
 
 execute:
   freeze: auto
 
 editor: visual
-

@@ -13,7 +13,7 @@ about:
       href: https://www.linkedin.com/in/isai-quinones-a147b42b8
     - icon: github
       text: Github
-      href: https://github.com/iquinones2/R-Data-Science-Portfolio.git
+      href: https://github.com/iquinones2
 ---
 
 Hello! My name is Isai Quinones. I am a Dominican University Student majoring in "Data Science" and "Mathematics and Computer Science"
@@ -66,3 +66,11 @@ Expected Graduation: **May 2027**
 I'm particularly interested in **data science, data analytics, machine learning, and using data to support business decisions**.
 
 I'm currently building this portfolio to showcase projects involving data cleaning, exploratory data analysis, visualization, statistical modeling, and machine learning using R and other data science tools.
+
+## Off the Clock
+
+::: off-clock
+![](images/dog.jpg){fig-alt="Isai's dog, a Cane Corso and Poodle mix"}
+
+This is my dog. He's a Cane Corso and Poodle mix, officially a "canoodle," which is fun to say.
+:::

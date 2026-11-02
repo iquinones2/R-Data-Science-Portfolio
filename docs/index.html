@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Isai Quiñones | Data Science Portfolio – Isai’s Portfolio</title>
+<title>Isai Quiñones | Data Science Portfolio – Isai Quiñones</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -44,10 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2411b9424b0e2cbcb467ea465e37b99a.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b0ee52e4dc8db0fb1c3a6dbd8a6b6139.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-251522a10a99fb512a2999945799fde2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,20 +78,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-work .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-project','listing-website','listing-format','listing-knitr','listing-execute','listing-editor','listing-engines','listing-language','listing-freeze','listing-title-block-banner','listing-title','listing-author','listing-date','listing-categories','listing-description','listing-path','listing-outputHref','listing-date-modified','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-knitr","listing-execute","listing-editor","listing-engines","listing-language","listing-freeze","listing-title-block-banner","listing-title","listing-author","listing-date","listing-categories","listing-description","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-work'] = new List('listing-work', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -138,15 +138,15 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed home quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Isai’s Portfolio</span>
+    <span class="navbar-title">Isai Quiñones</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -156,16 +156,20 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Work</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/iquinones2/R-Data-Science-Portfolio.git"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/iquinones2"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/isai-quinones-a147b42b8"> <i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/isai-quinones-a147b42b8"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -177,200 +181,75 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Isai Quiñones | Data Science Portfolio</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Q29kZQ==">Code <span class="quarto-category-count">(3)</span></div><div class="category" data-category="RGF0YSUyMEFuYWx5dGljcw==">Data Analytics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="RGF0YSUyMFN0YXRpc3RpY3M=">Data Statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RG9n">Dog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UXVhcnRv">Quarto <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(2)</span></div><div class="category" data-category="V2Vi">Web <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Isai Quiñones | Data Science Portfolio</h1>
+</div>
 
 
 
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
+  </div>
+  
 
 
-<style>
-.intro-card {
-  max-width: 900px;
-  margin: 1.5rem auto;
-  padding: 1.5rem 2rem;
-  border-radius: 12px;
-  border-left: 6px solid #14213d;
-  background: rgba(44, 90, 160, 0.08);
-}
-.intro-card h2 { margin-top: 0; border-bottom: none; }
-.intro-card .btn { margin: 0.25rem 0.4rem 0.25rem 0; }
-.intro-tools { opacity: 0.85; font-size: 0.95rem; }
-</style>
-<section id="hi-im-isai" class="level2 intro-card">
-<h2 class="anchored" data-anchor-id="hi-im-isai">Hi, I’m Isai</h2>
-<p>Senior at <strong>Dominican University</strong> (graduating May 2027), double majoring in <strong>Data Science/Mathematics and Computer Science</strong> with a minor in <strong>Finance</strong>. I’m seeking <strong>full-time data science roles</strong> after graduation. This portfolio collects my work in R, statistical analysis, and data visualization.</p>
-<p><span class="intro-tools"><strong>Tools:</strong> R · Python · SQL · Snowflake · Quarto · GitHub</span></p>
-<p><a href="https://www.linkedin.com/in/isai-quinones-a147b42b8" class="btn btn-primary">LinkedIn</a> <a href="https://github.com/iquinones2" class="btn btn-outline-primary">GitHub</a> <a href="mailto:iq765019@gmail.com" class="btn btn-outline-primary">Email me</a></p>
+</header>
+
+
+<section class="hero">
+  <div>
+    <h1>For two decades, stocks and bond yields rose and fell together. Since 2022, they haven't.</h1>
+    <p class="hero-intro">I'm Isai Quiñones, a data science and math/CS senior at Dominican University with a minor in finance, graduating May 2027 and looking for full-time data science roles. I measured this shift in R using 26 years of S&amp;P 500 and Treasury data.</p>
+    <div class="hero-links">
+      <a class="primary" href="posts/Stock-Bond/index.html">Read the analysis</a>
+      <a href="https://www.linkedin.com/in/isai-quinones-a147b42b8">LinkedIn</a>
+      <a href="https://github.com/iquinones2">GitHub</a>
+      <a href="mailto:iq765019@gmail.com">Email</a>
+    </div>
+  </div>
+  <figure class="figure">
+    <a href="posts/Stock-Bond/index.html">
+      <img src="images/hero-correlation.png" width="1100" height="720" alt="Line chart of the rolling one-year correlation between daily S&amp;P 500 returns and daily changes in the 10-year Treasury yield, 2001 to 2026. It stays mostly between 0.2 and 0.6, rising around the 2008–09 crisis and the 2020 COVID shock, then falls below zero after 2022." class="figure-img">
+    </a>
+    <figcaption>Rolling 250-day correlation between daily S&amp;P 500 returns and daily changes in the 10-year Treasury yield. Shaded: 2008–09 financial crisis, 2020 COVID-19 shock. Data: Yahoo Finance, FRED.</figcaption>
+  </figure>
 </section>
-<section id="projects" class="level2">
-<h2 class="anchored" data-anchor-id="projects">Projects</h2>
 
-
-
+<section class="work">
+  <h2 class="anchored">Work</h2>
+  <a class="featured" href="posts/Stock-Bond/index.html">
+    <div class="featured-title">U.S. stock returns and Treasury yields: a statistical analysis, 2000–2026</div>
+    <p>Regression and correlation analysis of daily S&amp;P 500 returns against 10-year Treasury yield changes. Yield changes explain 8% of return variation across the full period, rising to 15% in the 2008–09 financial crisis and 23% during the 2020 COVID-19 shock.</p>
+    <span class="meta">Built in R with quantmod, fredr and ggplot2. August 2026.</span>
+  </a>
 </section>
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="V2ViJTJDUXVhcnRvJTJDQ29kZQ==" data-listing-date-sort="1788066000000" data-listing-file-modified-sort="1792124854906" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="534">
-<div class="thumbnail"><a href="./posts/Salem-Web-Blog/Salem.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/Salem-Web-Blog/SalemT.png" alt="Screenshot of the Salem blog homepage"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Salem-Web-Blog/Salem.html" class="no-external">Salem Web-Blog: A Small Business Digital Growth Initiative</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('V2Vi'); return false;">Web</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UXVhcnRv'); return false;">Quarto</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29kZQ=='); return false;">Code</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/Salem-Web-Blog/Salem.html" class="no-external">
-Salem Custom Screen Printing is a small t-shirt screening business, and I’m building its website as a <strong>Small Business Digital Growth Initiative</strong>. The site is a blog-style home…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/Salem-Web-Blog/Salem.html" class="no-external">
-<div class="listing-date">
-Aug 30, 2026
-</div>
-<div class="listing-author">
-Isai Quiñones
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="UiUyQ0NvZGUlMkNEYXRhJTIwQW5hbHl0aWNzJTJDRGF0YSUyMFN0YXRpc3RpY3M=" data-listing-date-sort="1787288400000" data-listing-file-modified-sort="1792123065706" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1091">
-<div class="thumbnail"><a href="./posts/Stock-Bond/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/Stock-Bond/market.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Stock-Bond/index.html" class="no-external">The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29kZQ=='); return false;">Code</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMEFuYWx5dGljcw=='); return false;">Data Analytics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMFN0YXRpc3RpY3M='); return false;">Data Statistics</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/Stock-Bond/index.html" class="no-external">
-This project examines the relationship between the U.S. stock market and the 10-year U.S. Treasury yield from 2000 through 2026. The S&amp;P 500 is used to represent…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/Stock-Bond/index.html" class="no-external">
-<div class="listing-date">
-Aug 21, 2026
-</div>
-<div class="listing-author">
-Isai Quiñones
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="UiUyQ0NvZGUlMkNEYXRhJTIwQW5hbHl0aWNz" data-listing-date-sort="1787202000000" data-listing-file-modified-sort="1792122718925" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="134">
-<div class="thumbnail"><a href="./posts/cool_ggplot_work/index.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/cool_ggplot_work/index_files/figure-html/MPG in city vs highway-1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/cool_ggplot_work/index.html" class="no-external">R Graphs</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29kZQ=='); return false;">Code</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMEFuYWx5dGljcw=='); return false;">Data Analytics</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/cool_ggplot_work/index.html" class="no-external">
-On Aug.&nbsp;17th through the 21st I took a week long crash course on how to use R for Data Science.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/cool_ggplot_work/index.html" class="no-external">
-<div class="listing-date">
-Aug 20, 2026
-</div>
-<div class="listing-author">
-Isai Quinones
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="RG9n" data-listing-date-sort="1787029200000" data-listing-file-modified-sort="1792122718926" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="20">
-<div class="thumbnail"><a href="./posts/myDog/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/myDog/dog.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/myDog/index.html" class="no-external">My Dog</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('RG9n'); return false;">Dog</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/myDog/index.html" class="no-external">
-He is a Cane Corso and Poodle mix breed. He is listed as a canoodle which is funny to pronounce.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/myDog/index.html" class="no-external">
-<div class="listing-date">
-Aug 18, 2026
-</div>
-<div class="listing-author">
-Isai Quinones
-</div>
-</a>
-</div>
-</div>
-</div>
+<div id="listing-work" class="quarto-listing quarto-listing-container-custom">
+<ul class="ledger">
+<li data-index="0" data-categories="V2ViJTJDUXVhcnRvJTJDQ29kZQ==" data-listing-date-sort="1788066000000" data-listing-file-modified-sort="1793655203046" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="534">
+<a href="./posts/Salem-Web-Blog/Salem.html"> <time>Aug 2026</time> <span class="title">Salem Web-Blog: A Small Business Digital Growth Initiative<span class="desc">A website for a local screen-printing business, built with Quarto and hosted on GitHub Pages.</span></span> <span class="meta">Web, Quarto, Code</span> </a>
+</li>
+<li data-index="1" data-categories="UiUyQ0NvZGUlMkNEYXRhJTIwQW5hbHl0aWNz" data-listing-date-sort="1787202000000" data-listing-file-modified-sort="1793655203047" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="140">
+<a href="./posts/cool_ggplot_work/index.html"> <time>Aug 2026</time> <span class="title">R Graphs<span class="desc">Charts and lessons from a week-long R for Data Science crash course.</span></span> <span class="meta">R, Code, Data Analytics</span> </a>
+</li>
+</ul>
 <div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</div>
+
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

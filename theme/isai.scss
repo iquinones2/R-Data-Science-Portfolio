@@ -1,0 +1,142 @@
+/*-- scss:defaults --*/
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+$paper:    #F5F7F9;
+$ink:      #1C2733;
+$muted:    #5A6672;
+$grid:     #DCE2E8;
+$equities: #2F5D8A;
+$yields:   #B7832F;
+$shock:    #E9E2EF;
+
+$body-bg: $paper;
+$body-color: $ink;
+$link-color: $equities;
+$primary: $equities;
+$secondary: $muted;
+
+$font-family-sans-serif: "Schibsted Grotesk", system-ui, sans-serif;
+$font-family-serif: "Source Serif 4", Georgia, serif;
+$font-family-monospace: "JetBrains Mono", ui-monospace, monospace;
+$font-family-base: $font-family-serif;
+$headings-font-family: $font-family-sans-serif;
+$headings-font-weight: 600;
+$font-size-base: 1.0625rem;
+$line-height-base: 1.65;
+
+$navbar-bg: $paper;
+$navbar-fg: $ink;
+$navbar-hl: $equities;
+$footer-bg: $paper;
+
+$code-block-bg: #ECEFF3;
+$code-color: $ink;
+$border-color: $grid;
+$border-radius: 4px;
+$border-radius-lg: 6px;
+
+/*-- scss:rules --*/
+h1, h2, h3, h4 { letter-spacing: -0.015em; line-height: 1.2; }
+h2 { border-bottom: none; margin-top: 2.5rem; }
+
+.navbar { border-bottom: 1px solid $grid; font-family: $font-family-sans-serif; }
+.navbar-brand .navbar-title { font-weight: 600; letter-spacing: -0.01em; }
+
+a { text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { color: darken($equities, 10%); }
+:focus-visible { outline: 2px solid $equities; outline-offset: 3px; border-radius: 2px; }
+
+// Long-form reading width for posts
+#quarto-document-content > p,
+#quarto-document-content > ul,
+#quarto-document-content > ol { max-width: 68ch; }
+
+.quarto-title-banner { background: $paper !important; color: $ink !important; border-bottom: 1px solid $grid; }
+.quarto-title-banner .quarto-title .title { color: $ink; font-size: clamp(1.8rem, 3.4vw, 2.6rem); max-width: 26ch; }
+.quarto-title-meta-heading { font-family: $font-family-sans-serif; color: $muted; text-transform: none; letter-spacing: 0; }
+.quarto-category { border-color: $grid; color: $muted; font-family: $font-family-sans-serif; text-transform: none; }
+
+div.sourceCode, pre.sourceCode { border: 1px solid $grid; border-radius: $border-radius; }
+.cell-output-display img { border: 1px solid $grid; border-radius: $border-radius; }
+
+/* ---------- Home: hero ---------- */
+.home #title-block-header { display: none; }
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+  padding: clamp(2rem, 6vw, 4.5rem) 0 clamp(2rem, 5vw, 3.5rem);
+  border-bottom: 1px solid $grid;
+}
+.hero h1 {
+  font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+  margin: 0 0 1.25rem;
+  max-width: 18ch;
+}
+.hero-intro { font-size: 1.05rem; color: $ink; max-width: 40ch; margin-bottom: 1.5rem; }
+.hero-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; align-items: baseline; font-family: $font-family-sans-serif; }
+.hero-links a { font-weight: 500; }
+.hero-links a.primary {
+  background: $equities; color: #fff; text-decoration: none;
+  padding: 0.55rem 1rem; border-radius: $border-radius;
+}
+.hero-links a.primary:hover { background: darken($equities, 8%); color: #fff; }
+.hero figure { margin: 0; }
+.hero figure a { display: block; }
+.hero figure img { width: 100%; height: auto; display: block; }
+.hero figcaption { font-family: $font-family-sans-serif; font-size: 0.8rem; color: $muted; margin-top: 0.5rem; max-width: 70ch; }
+@media (max-width: 860px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ---------- Home: work ---------- */
+.work h2 { font-size: 1.35rem; margin: 2.75rem 0 1rem; }
+.featured {
+  display: block; text-decoration: none; color: inherit;
+  padding: 1.5rem 0 1.75rem;
+  border-top: 2px solid $ink;
+  border-bottom: 1px solid $grid;
+}
+.featured:hover { color: inherit; }
+.featured:hover .featured-title { color: $equities; text-decoration: underline; }
+.featured-title { font-family: $font-family-sans-serif; font-size: clamp(1.25rem, 2.2vw, 1.6rem); font-weight: 600; line-height: 1.25; max-width: 34ch; margin-bottom: 0.6rem; }
+.featured p { max-width: 62ch; margin-bottom: 0.6rem; }
+.featured .meta, .ledger .meta { font-family: $font-family-sans-serif; font-size: 0.85rem; color: $muted; }
+
+.ledger { list-style: none; padding: 0; margin: 0; }
+.ledger li { border-bottom: 1px solid $grid; }
+.ledger a {
+  display: grid; grid-template-columns: 6.5rem minmax(0, 1fr) auto; gap: 1rem;
+  align-items: baseline; padding: 1rem 0; color: inherit; text-decoration: none;
+}
+.ledger time { font-family: $font-family-sans-serif; font-size: 0.85rem; color: $muted; font-variant-numeric: tabular-nums; }
+.ledger .title { font-family: $font-family-sans-serif; font-weight: 500; font-size: 1.1rem; }
+.ledger .desc { display: block; font-family: $font-family-serif; font-weight: 400; font-size: 0.95rem; color: $muted; margin-top: 0.2rem; }
+.ledger a:hover .title { color: $equities; text-decoration: underline; }
+@media (max-width: 600px) {
+  .ledger a { grid-template-columns: 1fr; gap: 0.15rem; }
+}
+
+/* ---------- About ---------- */
+.off-clock { display: flex; gap: 1.25rem; align-items: center; max-width: 68ch; }
+.off-clock > :first-child { flex: 0 0 140px; margin: 0; }
+.off-clock > * { margin-bottom: 0; }
+.off-clock img { width: 140px; height: 140px; max-width: none; object-fit: cover; border-radius: 50%; display: block; }
+@media (max-width: 500px) { .off-clock { flex-direction: column; align-items: flex-start; } }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+// Quarto title-block defaults use all-caps labels; keep them sentence case.
+.quarto-title-meta-heading,
+.quarto-title .quarto-categories .quarto-category,
+.quarto-title-banner .quarto-categories .quarto-category {
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-family: $font-family-sans-serif;
+  font-size: 0.8rem;
+}
+.quarto-title-banner .quarto-categories .quarto-category { color: $muted !important; border-color: $grid !important; }

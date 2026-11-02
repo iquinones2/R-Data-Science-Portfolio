@@ -3,6 +3,7 @@ title: "Salem Web-Blog: A Small Business Digital Growth Initiative"
 author: "Isai Quiñones"
 date: "2026-8-30"
 categories: [Web, Quarto, Code]
+description: "A website for a local screen-printing business, built with Quarto and hosted on GitHub Pages."
 ---
 
 ![Salem homepage](SalemT.png){fig-alt="Screenshot of the Salem blog homepage"}

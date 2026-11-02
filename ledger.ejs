@@ -1,0 +1,11 @@
+<ul class="ledger">
+<% for (const item of items) { %>
+  <li <%= metadataAttrs(item) %>>
+    <a href="<%- item.path %>">
+      <time><%= item.date %></time>
+      <span class="title"><%= item.title %><% if (item.description) { %><span class="desc"><%= item.description %></span><% } %></span>
+      <span class="meta"><%= (item.categories || []).join(", ") %></span>
+    </a>
+  </li>
+<% } %>
+</ul>
