@@ -1,6 +1,7 @@
 ---
 title: "Isai Quiñones | Data Science Portfolio"
-body-classes: home
+pagetitle: "Isai Quiñones | Data Science Portfolio"
+title-block-style: none
 page-layout: full
 listing:
   id: work
@@ -18,7 +19,7 @@ listing:
 <section class="hero">
   <div>
     <h1>For two decades, stocks and bond yields rose and fell together. Since 2022, they haven't.</h1>
-    <p class="hero-intro">I'm Isai Quiñones, a data science and math/CS senior at Dominican University with a minor in finance, graduating May 2027 and looking for full-time data science roles. I measured this shift in R using 26 years of S&amp;P 500 and Treasury data.</p>
+    <p class="hero-intro">I'm Isai Quiñones, a data science senior at Dominican University with a minor in finance, graduating May 2027 and looking for full-time data science roles. I measured this shift in R using 26 years of S&amp;P 500 and Treasury data.</p>
     <div class="hero-links">
       <a class="primary" href="posts/Stock-Bond/index.html">Read the analysis</a>
       <a href="https://www.linkedin.com/in/isai-quinones-a147b42b8">LinkedIn</a>
@@ -28,7 +29,7 @@ listing:
   </div>
   <figure>
     <a href="posts/Stock-Bond/index.html">
-      <img src="images/hero-correlation.png" width="1100" height="720"
+      <img src="images/hero-correlation.png" width="1400" height="860"
            alt="Line chart of the rolling one-year correlation between daily S&amp;P 500 returns and daily changes in the 10-year Treasury yield, 2001 to 2026. It stays mostly between 0.2 and 0.6, rising around the 2008–09 crisis and the 2020 COVID shock, then falls below zero after 2022.">
     </a>
     <figcaption>Rolling 250-day correlation between daily S&amp;P 500 returns and daily changes in the 10-year Treasury yield. Shaded: 2008–09 financial crisis, 2020 COVID-19 shock. Data: Yahoo Finance, FRED.</figcaption>

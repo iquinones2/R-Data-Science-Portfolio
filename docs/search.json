@@ -4,49 +4,14 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Hello! My name is Isai Quinones. I am a Dominican University Student majoring in “Data Science” and “Mathematics and Computer Science”"
-  },
-  {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "About",
-    "section": "Education",
-    "text": "Education\n\nDominican University\nRiver Forest, Illinois\nB.S. in Data Science & Mathematics and Computer Science\nMinor in Finance\nExpected Graduation: May 2027"
-  },
-  {
-    "objectID": "about.html#experience",
-    "href": "about.html#experience",
-    "title": "About",
-    "section": "Experience",
-    "text": "Experience\n\nDatatelligent\nSolutions Engineer | September 2025 – April 2026\n\nWorked with data-driven solutions and analytics technologies.\nGained experience working with Snowflake and data-focused applications.\nContributed to solutions involving data analysis and higher-education data.\nCollaborated with team members to develop and support data-driven solutions."
-  },
-  {
-    "objectID": "about.html#technical-skills",
-    "href": "about.html#technical-skills",
-    "title": "About",
-    "section": "Technical Skills",
-    "text": "Technical Skills\nProgramming & Analysis\n\nR\nPython\nSQL\nData Cleaning\nStatistical Analysis\n\nData Visualization\n\nggplot2\nQuarto\nData Visualization\nExploratory Data Analysis\n\nData & Cloud\n\nSnowflake\nGitHub\nStreamlit"
-  },
-  {
-    "objectID": "about.html#what-im-interested-in",
-    "href": "about.html#what-im-interested-in",
-    "title": "About",
-    "section": "What I’m Interested In",
-    "text": "What I’m Interested In\nI’m particularly interested in data science, data analytics, machine learning, and using data to support business decisions.\nI’m currently building this portfolio to showcase projects involving data cleaning, exploratory data analysis, visualization, statistical modeling, and machine learning using R and other data science tools."
-  },
-  {
-    "objectID": "about.html#off-the-clock",
-    "href": "about.html#off-the-clock",
-    "title": "About",
-    "section": "Off the Clock",
-    "text": "Off the Clock\n\n\nThis is my dog. He’s a Cane Corso and Poodle mix, officially a “canoodle,” which is fun to say."
+    "text": "Data Science · Dominican University '27\n    Hi, I'm Isai.\n    I'm a first-generation data science student with a minor in finance. I build data pipelines, dashboards, and statistical analyses, and I'm looking for full-time data science roles starting summer 2027.\n    \n      View résumé (PDF)\n      Email\n      LinkedIn\n      GitHub\n    \n  \n\n\n\n  May 2027B.S. Data Science, minor in Finance\n  4,000 studentsCampus data modeled in Snowflake at Datatelligent\n  ~6,600 daysof market data regressed for the Fall Mini Expo 2026\n\n\n\n  What I work with\n  Pick a skill to see where I've used it.\n  \n    Python\n    SQL\n    R\n    Snowflake\n    Statistics\n    ggplot2\n    Quarto\n    JavaScript\n    HTML/CSS\n    C#\n    Figma\n    Git/GitHub\n    Excel\n    SAS\n  \n\n  \n    \n      \n        Oct–Dec 2026Marketing & Community Engagement Intern · Digital Leaders Now\n        Ran a comparative audit of two nonprofit websites, flagging broken links, outdated content, and donation gaps to improve engagement.\n      \n    \n    \n      \n        Aug 2026 – nowWeb Developer (Volunteer) · Salem Custom Screen Printing\n        Designed the site in Figma and built it with HTML, CSS, and JavaScript on Quarto, deployed on GitHub Pages. Now adding a subscribe form wired to Google Sheets and an automated email newsletter. Read the write-up\n      \n    \n    \n      \n        Fall 2026Stock & Bond Analysis · Fall Mini Expo\n        Regressed daily S&P 500 returns on 10-year Treasury yield changes, 2000–2026. The link was significant (R² = 0.082) and grew stronger in 2008–09 (0.150) and the 2020 COVID shock (0.230). See the analysis\n      \n    \n    \n      \n        Spring 2026ASP.NET MVC Sales App · Class project\n        A multi-layer MVC web app in C# and SQL Server with full CRUD and database connectivity. View on GitHub\n      \n    \n    \n      \n        Sep 2025 – Apr 2026Solutions Engineer Intern · Datatelligent\n        Built extraction and analysis workflows in Python and SQL for the FUSION analytics platform on a 4,000-student Snowflake database, and the first interactive Snowflake dashboards on retention, academic success, and faculty engagement.\n      \n    \n    \n      \n        Summer 2024Quality Control & Assembly · Sloan Valve\n        Inspected components against spec and logged results in Excel and quality databases.\n      \n    \n    \n      \n        Class of 2027B.S. Data Science, minor in Finance · Dominican University\n        Coursework includes Database Design and Programming, Applied Statistical Analysis (SAS), Web Technologies, and Financial Data Analytics.\n      \n    \n  \n\n\n\n  Off the clock\n  \n    \n    I lead a weekly youth group at IAFCJ Chicago. At home there's my dog, a Cane Corso and Poodle mix, officially a \"canoodle,\" which is fun to say."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Isai Quiñones | Data Science Portfolio",
     "section": "",
-    "text": "For two decades, stocks and bond yields rose and fell together. Since 2022, they haven't.\n    I'm Isai Quiñones, a data science and math/CS senior at Dominican University with a minor in finance, graduating May 2027 and looking for full-time data science roles. I measured this shift in R using 26 years of S&P 500 and Treasury data.\n    \n      Read the analysis\n      LinkedIn\n      GitHub\n      Email\n    \n  \n  \n    \n      \n    \n    Rolling 250-day correlation between daily S&P 500 returns and daily changes in the 10-year Treasury yield. Shaded: 2008–09 financial crisis, 2020 COVID-19 shock. Data: Yahoo Finance, FRED.\n  \n\n\n\n  Work\n  \n    U.S. stock returns and Treasury yields: a statistical analysis, 2000–2026\n    Regression and correlation analysis of daily S&P 500 returns against 10-year Treasury yield changes. Yield changes explain 8% of return variation across the full period, rising to 15% in the 2008–09 financial crisis and 23% during the 2020 COVID-19 shock.\n    Built in R with quantmod, fredr and ggplot2. August 2026.\n  \n\n\n\n\n Aug 2026 Salem Web-Blog: A Small Business Digital Growth InitiativeA website for a local screen-printing business, built with Quarto and hosted on GitHub Pages. Web, Quarto, Code \n\n\n Aug 2026 R GraphsCharts and lessons from a week-long R for Data Science crash course. R, Code, Data Analytics \n\n\nNo matching items"
+    "text": "For two decades, stocks and bond yields rose and fell together. Since 2022, they haven't.\n    I'm Isai Quiñones, a data science senior at Dominican University with a minor in finance, graduating May 2027 and looking for full-time data science roles. I measured this shift in R using 26 years of S&P 500 and Treasury data.\n    \n      Read the analysis\n      LinkedIn\n      GitHub\n      Email\n    \n  \n  \n    \n      \n    \n    Rolling 250-day correlation between daily S&P 500 returns and daily changes in the 10-year Treasury yield. Shaded: 2008–09 financial crisis, 2020 COVID-19 shock. Data: Yahoo Finance, FRED.\n  \n\n\n\n  Work\n  \n    U.S. stock returns and Treasury yields: a statistical analysis, 2000–2026\n    Regression and correlation analysis of daily S&P 500 returns against 10-year Treasury yield changes. Yield changes explain 8% of return variation across the full period, rising to 15% in the 2008–09 financial crisis and 23% during the 2020 COVID-19 shock.\n    Built in R with quantmod, fredr and ggplot2. August 2026.\n  \n\n\n\n\n Aug 2026 Salem Web-Blog: A Small Business Digital Growth InitiativeA website for a local screen-printing business, built with Quarto and hosted on GitHub Pages. Web, Quarto, Code \n\n\n Aug 2026 R GraphsCharts and lessons from a week-long R for Data Science crash course. R, Code, Data Analytics \n\n\nNo matching items"
   },
   {
     "objectID": "posts/cool_ggplot_work/index.html",

@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - files/
 
 website:
   title: "Isai Quiñones"
@@ -10,6 +12,9 @@ website:
       - text: Work
         href: index.qmd
       - about.qmd
+      - text: Résumé
+        href: files/Isai-Quinones-Resume.pdf
+        target: _blank
       - icon: github
         href: https://github.com/iquinones2
         aria-label: GitHub

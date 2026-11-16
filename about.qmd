@@ -1,76 +1,135 @@
 ---
 title: "About"
-image: philly.jpeg
-about:
-  template: trestles
-  links:
-    - icon: envelope
-      text: Email
-      href: mailto:iq765019@gmail.com
-      aria-label: Email
-    - icon: linkedin
-      text: LinkedIn
-      href: https://www.linkedin.com/in/isai-quinones-a147b42b8
-    - icon: github
-      text: Github
-      href: https://github.com/iquinones2
+pagetitle: "About | Isai Quiñones"
+title-block-style: none
+body-classes: about-page
+image: images/headshot.jpg
 ---
 
-Hello! My name is Isai Quinones. I am a Dominican University Student majoring in "Data Science" and "Mathematics and Computer Science"
+```{=html}
+<section class="about-hero">
+  <img class="about-photo" src="images/headshot.jpg" width="600" height="600"
+       alt="Headshot of Isai Quiñones in a suit and tie">
+  <div>
+    <p class="eyebrow">Data Science · Dominican University '27</p>
+    <h1>Hi, I'm Isai.</h1>
+    <p class="about-intro">I'm a first-generation data science student with a minor in finance. I build data pipelines, dashboards, and statistical analyses, and I'm looking for full-time data science roles starting summer 2027.</p>
+    <div class="hero-links">
+      <a class="primary" href="files/Isai-Quinones-Resume.pdf" target="_blank" rel="noopener">View résumé (PDF)</a>
+      <a href="mailto:iq765019@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/isai-quinones-a147b42b8">LinkedIn</a>
+      <a href="https://github.com/iquinones2">GitHub</a>
+    </div>
+  </div>
+</section>
 
-## Education
+<section class="glance" aria-label="At a glance">
+  <div><strong>May 2027</strong><span>B.S. Data Science, minor in Finance</span></div>
+  <div><strong>4,000 students</strong><span>Campus data modeled in Snowflake at Datatelligent</span></div>
+  <div><strong>~6,600 days</strong><span>of market data regressed for the Fall Mini Expo 2026</span></div>
+</section>
 
-### Dominican University
+<section class="skills-explorer">
+  <h2>What I work with</h2>
+  <p class="hint" id="skill-hint" aria-live="polite">Pick a skill to see where I've used it.</p>
+  <div class="chips" role="group" aria-label="Filter experience by skill">
+    <button type="button" data-skill="Python">Python</button>
+    <button type="button" data-skill="SQL">SQL</button>
+    <button type="button" data-skill="R">R</button>
+    <button type="button" data-skill="Snowflake">Snowflake</button>
+    <button type="button" data-skill="Statistics">Statistics</button>
+    <button type="button" data-skill="ggplot2">ggplot2</button>
+    <button type="button" data-skill="Quarto">Quarto</button>
+    <button type="button" data-skill="JavaScript">JavaScript</button>
+    <button type="button" data-skill="HTML/CSS">HTML/CSS</button>
+    <button type="button" data-skill="C#">C#</button>
+    <button type="button" data-skill="Figma">Figma</button>
+    <button type="button" data-skill="Git/GitHub">Git/GitHub</button>
+    <button type="button" data-skill="Excel">Excel</button>
+    <button type="button" data-skill="SAS">SAS</button>
+  </div>
 
-**River Forest, Illinois**\
-**B.S. in Data Science & Mathematics and Computer Science**\
-**Minor in Finance**\
-Expected Graduation: **May 2027**
+  <ol class="timeline">
+    <li data-skills="Web audit">
+      <details>
+        <summary><span class="when">Oct–Dec 2026</span><span class="what"><b>Marketing &amp; Community Engagement Intern</b> · Digital Leaders Now</span></summary>
+        <p>Ran a comparative audit of two nonprofit websites, flagging broken links, outdated content, and donation gaps to improve engagement.</p>
+      </details>
+    </li>
+    <li data-skills="HTML/CSS|JavaScript|Quarto|Figma|Git/GitHub">
+      <details>
+        <summary><span class="when">Aug 2026 – now</span><span class="what"><b>Web Developer (Volunteer)</b> · Salem Custom Screen Printing</span></summary>
+        <p>Designed the site in Figma and built it with HTML, CSS, and JavaScript on Quarto, deployed on GitHub Pages. Now adding a subscribe form wired to Google Sheets and an automated email newsletter. <a href="posts/Salem-Web-Blog/Salem.html">Read the write-up</a></p>
+      </details>
+    </li>
+    <li data-skills="R|Statistics|ggplot2|Quarto">
+      <details>
+        <summary><span class="when">Fall 2026</span><span class="what"><b>Stock &amp; Bond Analysis</b> · Fall Mini Expo</span></summary>
+        <p>Regressed daily S&amp;P 500 returns on 10-year Treasury yield changes, 2000–2026. The link was significant (R² = 0.082) and grew stronger in 2008–09 (0.150) and the 2020 COVID shock (0.230). <a href="posts/Stock-Bond/index.html">See the analysis</a></p>
+      </details>
+    </li>
+    <li data-skills="C#|SQL">
+      <details>
+        <summary><span class="when">Spring 2026</span><span class="what"><b>ASP.NET MVC Sales App</b> · Class project</span></summary>
+        <p>A multi-layer MVC web app in C# and SQL Server with full CRUD and database connectivity. <a href="https://github.com/iquinones2/ThreeLayerAPPCarSales">View on GitHub</a></p>
+      </details>
+    </li>
+    <li data-skills="Python|SQL|Snowflake">
+      <details>
+        <summary><span class="when">Sep 2025 – Apr 2026</span><span class="what"><b>Solutions Engineer Intern</b> · Datatelligent</span></summary>
+        <p>Built extraction and analysis workflows in Python and SQL for the FUSION analytics platform on a 4,000-student Snowflake database, and the first interactive Snowflake dashboards on retention, academic success, and faculty engagement.</p>
+      </details>
+    </li>
+    <li data-skills="Excel">
+      <details>
+        <summary><span class="when">Summer 2024</span><span class="what"><b>Quality Control &amp; Assembly</b> · Sloan Valve</span></summary>
+        <p>Inspected components against spec and logged results in Excel and quality databases.</p>
+      </details>
+    </li>
+    <li data-skills="SAS|SQL|Statistics">
+      <details>
+        <summary><span class="when">Class of 2027</span><span class="what"><b>B.S. Data Science, minor in Finance</b> · Dominican University</span></summary>
+        <p>Coursework includes Database Design and Programming, Applied Statistical Analysis (SAS), Web Technologies, and Financial Data Analytics.</p>
+      </details>
+    </li>
+  </ol>
+</section>
 
-## Experience
+<section class="off-clock-wrap">
+  <h2>Off the clock</h2>
+  <div class="off-clock">
+    <img src="images/dog.jpg" alt="Isai's dog, a Cane Corso and Poodle mix">
+    <p>I lead a weekly youth group at IAFCJ Chicago. At home there's my dog, a Cane Corso and Poodle mix, officially a "canoodle," which is fun to say.</p>
+  </div>
+</section>
 
-### Datatelligent
+<script>
+(() => {
+  const chips = document.querySelectorAll('.chips button');
+  const items = document.querySelectorAll('.timeline li');
+  const hint = document.getElementById('skill-hint');
+  const defaultHint = hint.textContent;
+  chips.forEach(c => c.setAttribute('aria-pressed', 'false'));
 
-**Solutions Engineer** \| September 2025 – April 2026
+  function apply(skill) {
+    let n = 0;
+    items.forEach(li => {
+      const match = !skill || li.dataset.skills.split('|').includes(skill);
+      li.classList.toggle('dim', !match);
+      li.classList.toggle('hit', !!skill && match);
+      if (skill && match) n++;
+    });
+    hint.textContent = skill
+      ? `${skill}: used in ${n} ${n === 1 ? 'place' : 'places'} below. Click again to clear.`
+      : defaultHint;
+  }
 
-- Worked with data-driven solutions and analytics technologies.
-- Gained experience working with **Snowflake** and data-focused applications.
-- Contributed to solutions involving data analysis and higher-education data.
-- Collaborated with team members to develop and support data-driven solutions.
-
-## Technical Skills
-
-**Programming & Analysis**
-
-- R
-- Python
-- SQL
-- Data Cleaning
-- Statistical Analysis
-
-**Data Visualization**
-
-- ggplot2
-- Quarto
-- Data Visualization
-- Exploratory Data Analysis
-
-**Data & Cloud**
-
-- Snowflake
-- GitHub
-- Streamlit
-
-## What I'm Interested In
-
-I'm particularly interested in **data science, data analytics, machine learning, and using data to support business decisions**.
-
-I'm currently building this portfolio to showcase projects involving data cleaning, exploratory data analysis, visualization, statistical modeling, and machine learning using R and other data science tools.
-
-## Off the Clock
-
-::: off-clock
-![](images/dog.jpg){fig-alt="Isai's dog, a Cane Corso and Poodle mix"}
-
-This is my dog. He's a Cane Corso and Poodle mix, officially a "canoodle," which is fun to say.
-:::
+  chips.forEach(btn => btn.addEventListener('click', () => {
+    const on = btn.getAttribute('aria-pressed') !== 'true';
+    chips.forEach(c => c.setAttribute('aria-pressed', 'false'));
+    btn.setAttribute('aria-pressed', String(on));
+    apply(on ? btn.dataset.skill : null);
+  }));
+})();
+</script>
+```
