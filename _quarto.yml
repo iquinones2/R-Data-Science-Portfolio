@@ -7,12 +7,33 @@ project:
 website:
   title: "Isai Quiñones"
   description: "Data science and finance portfolio: statistical analysis and visualization in R."
+  search: false
+  favicon: images/iq-mark.svg
   navbar:
+    logo: images/iq-mark.svg
+    logo-alt: "IQ monogram"
     right:
       - text: Work
-        href: index.qmd
-      - about.qmd
+        href: index.qmd#work
+      - text: Experience
+        href: index.qmd#experience
+      - text: About
+        href: about.qmd
+      - text: Contact
+        href: index.qmd#contact
+      - icon: github
+        href: https://github.com/iquinones2
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/isai-quinones-a147b42b8
+        aria-label: LinkedIn
       - text: Résumé
+        href: files/Isai-Quinones-Resume.pdf
+        target: _blank
+  page-footer:
+    left: "© 2026 Isai Quiñones · Built with Quarto and R"
+    right:
+      - text: Résumé (PDF)
         href: files/Isai-Quinones-Resume.pdf
         target: _blank
       - icon: github

@@ -4,8 +4,10 @@ author: "Isai Quiñones"
 date: "2026-8-21"
 categories: [R, Code, Data Analytics, Data Statistics]
 image: market.jpg
+code-fold: true
+code-summary: "Show the R code"
+body-classes: research-post
 ---
-
 
 This project examines the relationship between the U.S. stock market and the 10-year U.S. Treasury yield from 2000 through 2026. The S&P 500 is used to represent stock-market performance, while the 10-year Treasury yield represents conditions in the U.S. bond market. Historical S&P 500 data were obtained through Yahoo Finance, while Treasury yield data were collected from the Federal Reserve Bank of St. Louis Federal Reserve Economic Data (FRED). Using R, I analyze the relationship between daily S&P 500 returns and changes in the 10-year Treasury yield, with particular attention to how this relationship changed during the 2008–2009 Financial Crisis and the 2020 COVID-19 market shock.
 
@@ -85,6 +87,10 @@ summary(stock_bond_clean)
 
 ```{r}
 #| label: SP500&10TGraph
+#| layout-ncol: 2
+#| column: page
+#| fig-width: 6
+#| fig-height: 4
 #| echo: false
 library(quantmod)
 library(fredr)
@@ -106,6 +112,10 @@ ggplot(stock_bond, aes(x = date, y = treasury10)) +
     y = "10-Year Treasury Yield(%)"
   )
 ```
+
+::: {.panel-tabset}
+
+## Chart
 
 ```{r}
 #| label: Scatterplot
@@ -131,6 +141,8 @@ ggplot(
   )
 ```
 
+## Regression output
+
 ```{r}
 #| label: Line Regression
 library(quantmod)
@@ -145,7 +157,11 @@ model1 <- lm(
 summary(model1)
 ```
 
+:::
+
+::: {.finding}
 A linear regression of daily S&P 500 returns on daily changes in the 10-year Treasury yield from 2000–2026 found a statistically significant positive association (β = 0.060, p \< 0.001). However, the model's R² of 0.082 indicates that Treasury yield changes alone explain only a small portion of daily equity-return variation.
+:::
 
 ## How did the relationship between U.S. stock-market returns and changes in 10-year Treasury yields differ between the 2008–2009 financial crisis and the 2020 COVID-19 market shock?
 
@@ -178,28 +194,6 @@ range(covid$date)
 ```
 
 ```{r}
-#| label: financialc_model
-#| echo: false
-financial_model <- lm(
-  sp500_return ~ treasury10_change,
-  data = financial_crisis
-)
-
-summary(financial_model)
-```
-
-```{r}
-#| label: covid_model
-#| echo: false
-covid_model <- lm(
-  sp500_return ~ treasury10_change,
-  data = covid
-)
-
-summary(covid_model)
-```
-
-```{r}
 #| label: Correlation
 #| include: false
 financial_crisis_clean <- financial_crisis |>
@@ -218,6 +212,86 @@ cor(
   covid_clean$treasury10_change
 )
 ```
+
+:::: {.column-page layout-ncol=2}
+
+```{r}
+#| label: FinC_graph
+#| fig-width: 6
+#| fig-height: 4.2
+#| message: false
+#| echo: false
+ggplot(
+  financial_crisis_clean,
+  aes(
+    x= treasury10_change,
+    y=sp500_return
+  )
+) +
+  geom_point(alpha = 0.4) + 
+  geom_smooth(method = "lm")+
+  labs(
+    title = "S&P500 returns vs. Treasury Yields Changes",
+    subtitle = "2008-2009 Financial Crisis",
+    x = "Change in 10-Year Treasury Yield",
+    y = "S&P 500 Daily Return"
+  )
+```
+
+```{r}
+#| label: CovidGraph
+#| fig-width: 6
+#| fig-height: 4.2
+#| message: false
+#| echo: false
+ggplot(
+  covid_clean,
+  aes(
+    x=treasury10_change,
+    y=sp500_return
+  )
+) +
+  geom_point(alpha = 0.4) + 
+  geom_smooth(method = "lm")+
+  labs(
+    title = "S&P500 returns vs. Treasury Yields Changes",
+    subtitle = "Covid-19 2020 Period",
+    x = "Change in 10-Year Treasury Yield",
+    y = "S&P 500 Daily Return"
+  )
+```
+
+::::
+
+::: {.panel-tabset}
+
+## 2008–2009 model
+
+```{r}
+#| label: financialc_model
+#| echo: false
+financial_model <- lm(
+  sp500_return ~ treasury10_change,
+  data = financial_crisis
+)
+
+summary(financial_model)
+```
+
+## 2020 model
+
+```{r}
+#| label: covid_model
+#| echo: false
+covid_model <- lm(
+  sp500_return ~ treasury10_change,
+  data = covid
+)
+
+summary(covid_model)
+```
+
+:::
 
 ```{r}
 #| label: Comparison
@@ -262,49 +336,9 @@ comparison <- data.frame(
 comparison
 ```
 
-```{r}
-#| label: FinC_graph
-#| message: false
-#| echo: false
-ggplot(
-  financial_crisis_clean,
-  aes(
-    x= treasury10_change,
-    y=sp500_return
-  )
-) +
-  geom_point(alpha = 0.4) + 
-  geom_smooth(method = "lm")+
-  labs(
-    title = "S&P500 returns vs. Treasury Yields Changes",
-    subtitle = "2008-2009 Financial Crisis",
-    x = "Change in 10-Year Treasury Yield",
-    y = "S&P 500 Daily Return"
-  )
-```
-
-```{r}
-#| label: CovidGraph
-#| message: false
-#| echo: false
-ggplot(
-  covid_clean,
-  aes(
-    x=treasury10_change,
-    y=sp500_return
-  )
-) +
-  geom_point(alpha = 0.4) + 
-  geom_smooth(method = "lm")+
-  labs(
-    title = "S&P500 returns vs. Treasury Yields Changes",
-    subtitle = "Covid-19 2020 Period",
-    x = "Change in 10-Year Treasury Yield",
-    y = "S&P 500 Daily Return"
-  )
-```
-
+::: {.finding}
 The relationship between S&P 500 returns and changes in 10-year Treasury yields strengthened during periods of major financial stress. This is reflected in the increase in R² from 0.082 during 2000–2026 to 0.1495 during the 2008–2009 Financial Crisis and 0.2303 during the 2020 COVID-19 period. Thus, changes in Treasury yields explained a greater proportion of the variation in daily S&P 500 returns during both crises.
+:::
 
 ```{r}
 #| label: Crisis_stats
@@ -338,6 +372,9 @@ crisis_stats_long
 
 ```{r}
 #| label: Stats Bar
+#| column: page
+#| fig-width: 11
+#| fig-height: 4.6
 #| echo: false
 ggplot(
   crisis_stats_long,

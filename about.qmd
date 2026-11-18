@@ -3,34 +3,41 @@ title: "About"
 pagetitle: "About | Isai Quiñones"
 title-block-style: none
 body-classes: about-page
+page-layout: full
 image: images/headshot.jpg
 ---
 
 ```{=html}
-<section class="about-hero">
-  <img class="about-photo" src="images/headshot.jpg" width="600" height="600"
-       alt="Headshot of Isai Quiñones in a suit and tie">
-  <div>
-    <p class="eyebrow">Data Science · Dominican University '27</p>
-    <h1>Hi, I'm Isai.</h1>
-    <p class="about-intro">I'm a first-generation data science student with a minor in finance. I build data pipelines, dashboards, and statistical analyses, and I'm looking for full-time data science roles starting summer 2027.</p>
-    <div class="hero-links">
-      <a class="primary" href="files/Isai-Quinones-Resume.pdf" target="_blank" rel="noopener">View résumé (PDF)</a>
-      <a href="mailto:iq765019@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/isai-quinones-a147b42b8">LinkedIn</a>
-      <a href="https://github.com/iquinones2">GitHub</a>
+<section class="band band-paper column-screen">
+  <div class="wrap about-hero">
+    <img class="about-photo" src="images/headshot.jpg" width="600" height="600"
+         alt="Headshot of Isai Quiñones in a suit and tie">
+    <div>
+      <p class="status"><span class="dot" aria-hidden="true"></span>Open to <span class="d-only">full-time </span>data science roles · Summer 2027</p>
+      <p class="kicker">About <span aria-hidden="true">·</span> Dominican University '27</p>
+      <h1>Hi, I'm Isai.</h1>
+      <p class="lede">I'm a first-generation data science student with a minor in finance. I build data pipelines, dashboards, and statistical analyses, and I'm looking for full-time data science roles starting summer 2027.</p>
+      <div class="btn-row">
+        <a class="btn btn-solid" href="files/Isai-Quinones-Resume.pdf" target="_blank" rel="noopener">View résumé (PDF) <span aria-hidden="true">→</span></a>
+        <a class="btn btn-outline" href="mailto:iq765019@gmail.com">Email me</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="glance" aria-label="At a glance">
-  <div><strong>May 2027</strong><span>B.S. Data Science, minor in Finance</span></div>
-  <div><strong>4,000 students</strong><span>Campus data modeled in Snowflake at Datatelligent</span></div>
-  <div><strong>~6,600 days</strong><span>of market data regressed for the Fall Mini Expo 2026</span></div>
+<section class="band band-white band-rule column-screen" aria-label="At a glance">
+  <div class="wrap stats stats-3">
+    <div><strong>May 2027</strong><span>B.S. Data Science, minor in Finance</span></div>
+    <div><strong>4,000 students</strong><span>Campus data modeled in Snowflake at Datatelligent</span></div>
+    <div><strong>~6,600 days</strong><span>of market data regressed for the Fall Mini Expo 2026</span></div>
+  </div>
 </section>
 
-<section class="skills-explorer">
-  <h2>What I work with</h2>
+<section class="band band-paper column-screen">
+  <div class="wrap">
+<div class="skills-explorer">
+  <p class="kicker">01 — Experience</p>
+  <h2>What I work with, and where</h2>
   <p class="hint" id="skill-hint" aria-live="polite">Pick a skill to see where I've used it.</p>
   <div class="chips" role="group" aria-label="Filter experience by skill">
     <button type="button" data-skill="Python">Python</button>
@@ -93,13 +100,30 @@ image: images/headshot.jpg
       </details>
     </li>
   </ol>
+</div>
+  </div>
 </section>
 
-<section class="off-clock-wrap">
-  <h2>Off the clock</h2>
-  <div class="off-clock">
-    <img src="images/dog.jpg" alt="Isai's dog, a Cane Corso and Poodle mix">
-    <p>I lead a weekly youth group at IAFCJ Chicago. At home there's my dog, a Cane Corso and Poodle mix, officially a "canoodle," which is fun to say.</p>
+<section class="band band-white column-screen">
+  <div class="wrap">
+    <p class="kicker">02 — Off the clock</p>
+    <h2>Outside of data</h2>
+    <div class="panel off-clock">
+      <img src="images/dog.jpg" alt="Isai's dog, a Cane Corso and Poodle mix">
+      <p>I lead a weekly youth group at IAFCJ Chicago. At home there's my dog, a Cane Corso and Poodle mix, officially a "canoodle," which is fun to say.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band band-navy column-screen" id="contact">
+  <div class="wrap contact">
+    <p class="kicker">03 — Contact</p>
+    <h2>Hiring for a data science or analytics role?</h2>
+    <p>I graduate in May 2027 and can start that summer. Send me a note and I'll get back to you quickly.</p>
+    <div class="btn-row">
+      <a class="btn btn-light" href="mailto:iq765019@gmail.com">Email me <span aria-hidden="true">→</span></a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/isai-quinones-a147b42b8"><i class="bi bi-linkedin" aria-hidden="true"></i> Connect on LinkedIn</a>
+    </div>
   </div>
 </section>
 
