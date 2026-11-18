@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
   resources:
     - files/
 
@@ -8,6 +10,9 @@ website:
   title: "Isai Quiñones"
   description: "Data science and finance portfolio: statistical analysis and visualization in R."
   search: false
+  site-url: https://iquinones2.github.io/R-Data-Science-Portfolio/
+  open-graph: true
+  twitter-card: true
   favicon: images/iq-mark.svg
   navbar:
     logo: images/iq-mark.svg

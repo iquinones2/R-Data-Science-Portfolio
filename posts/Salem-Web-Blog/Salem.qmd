@@ -7,7 +7,7 @@ image: salem-current.jpg
 description: "A website for a local screen-printing business, built with Quarto and hosted on GitHub Pages."
 ---
 
-![Salem homepage](SalemT.png){fig-alt="Screenshot of the Salem blog homepage"}
+![](SalemT.png){fig-alt="Salem Custom Screen Printing logo: the word SALEM inside a laurel wreath, with Chicago, Illinois underneath" width="240"}
 
 ## Overview
 
@@ -33,7 +33,11 @@ Salem needed a stronger online presence to promote the brand and keep customers 
 
 I started the project in Posit Cloud and moved it to **VS Code with Git and GitHub**, so I can version my work and push updates directly to the live site.
 
-![The main page on the Salem site](mainBlogPage_v1.png){fig-alt="Screenshot of a Salem design page"}
+::: {.column-page layout-ncol=2}
+![The first version of the Salem homepage](mainBlogPage_v1.png){fig-alt="The first version of the Salem homepage: a black header with the business name over a list of blog posts with thumbnails and a category sidebar."}
+
+![The Salem homepage today](salem-current.jpg){fig-alt="The current Salem homepage: a large headline reading Custom shirts, made with care, above a photo of folded shirts on a print table next to the featured fall sale."}
+:::
 
 ## My Role
 
@@ -41,7 +45,7 @@ I'm the sole developer and maintainer. I handle the design, the code, the publis
 
 ## Challenges and What I Learned
 
-- **Moving from Posit Cloud to VS Code**
+- **Moving from Posit Cloud to VS Code:** setting up Git and GitHub locally so I could version my work and push updates straight to the live site.
 - **Turning the owner's needs into a plan:** Working through the design worksheet forced me to ask what the business actually needs, such as customer contact info for deals and news, rather than just what would be fun to build.
 
 ## What's Next

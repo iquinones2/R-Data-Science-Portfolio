@@ -1,6 +1,7 @@
 ---
 title: "About"
-pagetitle: "About | Isai Quiñones"
+pagetitle: "About"
+description: "About Isai Quiñones: first-generation data science student at Dominican University, graduating May 2027."
 title-block-style: none
 body-classes: about-page
 page-layout: full
@@ -13,7 +14,7 @@ image: images/headshot.jpg
     <img class="about-photo" src="images/headshot.jpg" width="600" height="600"
          alt="Headshot of Isai Quiñones in a suit and tie">
     <div>
-      <p class="status"><span class="dot" aria-hidden="true"></span>Open to <span class="d-only">full-time </span>Data Science roles · Summer 2027</p>
+      <p class="status"><span class="dot" aria-hidden="true"></span>Open to <span class="d-only">Full-Time </span>Data Science roles · Summer 2027</p>
       <p class="kicker">About <span aria-hidden="true">·</span> Dominican University '27</p>
       <h1>Hi, I'm Isai.</h1>
       <p class="lede">I'm a first-generation data science student with a minor in finance. I build data pipelines, dashboards, and statistical analyses, and I'm looking for full-time data science roles starting summer 2027.</p>
@@ -28,7 +29,7 @@ image: images/headshot.jpg
 <section class="band band-white band-rule column-screen" aria-label="At a glance">
   <div class="wrap stats stats-3">
     <div><strong>May 2027</strong><span>B.S. Data Science, minor in Finance</span></div>
-    <div><strong>4,000 students</strong><span>Campus data modeled in Snowflake at Datatelligent</span></div>
+    <div><strong>4,000 students</strong><span>in the mock Snowflake campus database I worked with at Datatelligent</span></div>
     <div><strong>~6,600 days</strong><span>of market data regressed for the Fall Mini Expo 2026</span></div>
   </div>
 </section>
@@ -84,7 +85,7 @@ image: images/headshot.jpg
     <li data-skills="Python|SQL|Snowflake">
       <details>
         <summary><span class="when">Sep 2025 – Apr 2026</span><span class="what"><b>Solutions Engineer Intern</b> · Datatelligent</span></summary>
-        <p>Built extraction and analysis workflows in Python and SQL for the FUSION analytics platform on a 4,000-student Snowflake database, and the first interactive Snowflake dashboards on retention, academic success, and faculty engagement.</p>
+        <p>Built extraction and analysis workflows in Python and SQL for the FUSION analytics platform on a mock 4,000-student Snowflake database, and the first interactive Snowflake dashboards on retention, academic success, and faculty engagement.</p>
       </details>
     </li>
     <li data-skills="Excel">

@@ -1,0 +1,17 @@
+{
+  "hash": "063ca1c7795b53710f24860c9be1cfc5",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"R Graphs\"\nauthor: \"Isai Quiñones\"\ndate: \"2026-8-20\"\ncategories: [R,Code,Data Analytics]\ndescription: \"Charts and lessons from a week-long R for Data Science crash course.\"\n---\n\nOn Aug. 17th through the 21st I took a week-long crash course on how to use R for Data Science.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\n\nggplot(\n  data = mpg, \n  mapping = aes(\n    x = cty,\n    y = hwy\n  )\n)+ geom_point()\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/MPG in city vs highway-1.png){fig-alt='Scatterplot of city versus highway fuel economy in miles per gallon for cars in the mpg dataset, showing that cars with better city mileage also get better highway mileage.' width=1400}\n:::\n:::\n\n\nThis is great, but one thing we learned about is the importance of clear labels using the `labs()` function.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\n\nggplot(\n  data = mpg, \n  mapping = aes(\n    x = cty,\n    y = hwy\n  )\n)+ geom_point() + \n  geom_smooth() + \n  labs(\n    x = \"City Mileage\",\n    y = \"Highway Mileage\", \n    title = \"City vs Highway\"\n  )\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n```\n\n\n:::\n\n::: {.cell-output-display}\n![](index_files/figure-html/c2-1.png){fig-alt='The same city versus highway mileage scatterplot with a smoothed trend line rising from left to right, an axis label on each axis, and the title City vs Highway.' width=1400}\n:::\n:::\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

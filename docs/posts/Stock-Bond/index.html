@@ -98,6 +98,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis – Isai Quiñones">
+<meta property="og:description" content="Data science and finance portfolio: statistical analysis and visualization in R.">
+<meta property="og:image" content="https://iquinones2.github.io/R-Data-Science-Portfolio/posts/Stock-Bond/market.jpg">
+<meta property="og:site_name" content="Isai Quiñones">
+<meta name="twitter:title" content="The Relationship Between U.S. Stock Market Returns and Treasury Bond Yields: A Statistical Analysis – Isai Quiñones">
+<meta name="twitter:description" content="Data science and finance portfolio: statistical analysis and visualization in R.">
+<meta name="twitter:image" content="https://iquinones2.github.io/R-Data-Science-Portfolio/posts/Stock-Bond/market.jpg">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed research-post fullcontent quarto-light">
@@ -207,10 +215,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell column-page quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="index_files/figure-html/SP500&amp;10TGraph-1.png" class="img-fluid" width="1200"></p>
+<p><img src="index_files/figure-html/SP500&amp;10TGraph-1.png" class="img-fluid" alt="Line chart of the S&amp;P 500 index from 2000 to 2026. It falls in the early 2000s and again in 2008 to 2009, then climbs steadily, most steeply after 2020." width="1200"></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="index_files/figure-html/SP500&amp;10TGraph-2.png" class="img-fluid" width="1200"></p>
+<p><img src="index_files/figure-html/SP500&amp;10TGraph-2.png" class="img-fluid" alt="Line chart of the 10-year U.S. Treasury yield from 2000 to 2026. It falls from about 6 percent to below 1 percent in 2020, then rises to around 4 to 5 percent after 2022." width="1200"></p>
 </div>
 </div>
 </div>
@@ -222,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/Scatterplot-1.png" class="img-fluid figure-img" width="1400"></p>
+<p><img src="index_files/figure-html/Scatterplot-1.png" class="img-fluid figure-img" alt="Scatterplot of daily S&amp;P 500 returns against daily changes in the 10-year Treasury yield, 2000 to 2026: a dense cloud of points centered on zero with an upward-sloping regression line." width="1400"></p>
 </figure>
 </div>
 </div>
@@ -278,7 +286,7 @@ F-statistic: 592.4 on 1 and 6598 DF,  p-value: &lt; 2.2e-16</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/FinC_graph-1.png" class="img-fluid figure-img" width="1200"></p>
+<p><img src="index_files/figure-html/FinC_graph-1.png" class="img-fluid figure-img" alt="Scatterplot of daily S&amp;P 500 returns against daily 10-year Treasury yield changes during the 2008 to 2009 financial crisis, with an upward-sloping regression line." width="1200"></p>
 </figure>
 </div>
 </div>
@@ -287,7 +295,7 @@ F-statistic: 592.4 on 1 and 6598 DF,  p-value: &lt; 2.2e-16</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/CovidGraph-1.png" class="img-fluid figure-img" width="1200"></p>
+<p><img src="index_files/figure-html/CovidGraph-1.png" class="img-fluid figure-img" alt="Scatterplot of daily S&amp;P 500 returns against daily 10-year Treasury yield changes during 2020, with a steeper upward-sloping regression line." width="1200"></p>
 </figure>
 </div>
 </div>
@@ -354,10 +362,26 @@ F-statistic:  73.9 on 1 and 247 DF,  p-value: 9.538e-16</code></pre>
 <div class="cell-output-display page-columns page-full">
 <div class="page-columns page-full">
 <figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="index_files/figure-html/Stats Bar-1.png" class="img-fluid figure-img column-page" width="2200"></p>
+<p class="page-columns page-full"><img src="index_files/figure-html/Stats Bar-1.png" class="img-fluid figure-img column-page" alt="Three bar charts comparing 2000 to 2026, the 2008 to 2009 financial crisis, and 2020 on correlation, R-squared in percent, and regression beta. All three measures rise from the full period to the 2008 to 2009 crisis to 2020." width="2200"></p>
 </figure>
 </div>
 </div>
+</div>
+</section>
+<section id="what-changed-after-2022" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="what-changed-after-2022">What changed after 2022?</h2>
+<p>The crisis models treat each period as a separate window. To see how the relationship moved over time, I calculated the correlation between daily S&amp;P 500 returns and daily changes in the 10-year Treasury yield over a rolling window of the previous 250 trading days, about one year.</p>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div class="page-columns page-full">
+<figure class="figure page-columns page-full">
+<p class="page-columns page-full"><img src="index_files/figure-html/Rolling_graph-1.png" class="img-fluid figure-img column-page" alt="Line chart of the rolling one-year correlation between daily S&amp;P 500 returns and daily 10-year Treasury yield changes, 2001 to 2026. It stays mostly between 0.2 and 0.6, with shaded bands for the 2008 to 2009 crisis and 2020, then drops below zero for most of the period after 2022." width="2200"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="finding">
+<p>From 2001 through 2021, the rolling correlation averaged 0.34 and was positive on 94% of trading days: stocks tended to rise on days when Treasury yields rose. Since 2022, a period that began as the Federal Reserve started raising interest rates, that pattern has broken down. The correlation averaged -0.05, was negative on 62% of trading days, and reached -0.31 in July 2024. In the most recent period, rising yields have more often coincided with falling stock prices, the opposite of the pattern that held for the previous two decades. Like the regressions above, this measures association, not cause.</p>
 </div>
 
 
@@ -437,7 +461,7 @@ F-statistic:  73.9 on 1 and 247 DF,  p-value: 9.538e-16</code></pre>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/iquinones2\.github\.io\/R-Data-Science-Portfolio\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

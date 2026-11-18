@@ -8,3 +8,4 @@
 
 **/*.quarto_ipynb
 .Renviron
+.DS_Store

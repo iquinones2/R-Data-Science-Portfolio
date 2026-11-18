@@ -1,12 +1,12 @@
 ---
 title: "R Graphs"
-author: "Isai Quinones"
+author: "Isai Quiñones"
 date: "2026-8-20"
 categories: [R,Code,Data Analytics]
 description: "Charts and lessons from a week-long R for Data Science crash course."
 ---
 
-On Aug. 17th through the 21st I took a week long crash course on how to use R for Data Science.
+On Aug. 17th through the 21st I took a week-long crash course on how to use R for Data Science.
 
 ```{r}
 #| label: setup
@@ -17,6 +17,7 @@ use_isai_defaults()
 
 ```{r}
 #| label: MPG in city vs highway
+#| fig-alt: "Scatterplot of city versus highway fuel economy in miles per gallon for cars in the mpg dataset, showing that cars with better city mileage also get better highway mileage."
 #| message: false
 #| warning: false
 library(tidyverse)
@@ -32,10 +33,11 @@ ggplot(
 
 ```
 
-This is great, but one thing we learned about is the importance of clear labels using the lab functions.
+This is great, but one thing we learned about is the importance of clear labels using the `labs()` function.
 
 ```{r}
 #| label: c2
+#| fig-alt: "The same city versus highway mileage scatterplot with a smoothed trend line rising from left to right, an axis label on each axis, and the title City vs Highway."
 #| echo: true
 library(tidyverse)
 
@@ -48,8 +50,8 @@ ggplot(
 )+ geom_point() + 
   geom_smooth() + 
   labs(
-    x = "City Milage",
-    y = "Highway Milage", 
+    x = "City Mileage",
+    y = "Highway Mileage", 
     title = "City vs Highway"
   )
 ```

@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Isai Quinones">
+<meta name="author" content="Isai Quiñones">
 <meta name="dcterms.date" content="2026-08-20">
 <meta name="description" content="Charts and lessons from a week-long R for Data Science crash course.">
 
@@ -99,6 +99,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="R Graphs – Isai Quiñones">
+<meta property="og:description" content="Charts and lessons from a week-long R for Data Science crash course.">
+<meta property="og:image" content="https://iquinones2.github.io/R-Data-Science-Portfolio/posts/cool_ggplot_work/index_files/figure-html/MPG in city vs highway-1.png">
+<meta property="og:site_name" content="Isai Quiñones">
+<meta property="og:image:alt" content="Scatterplot of city versus highway fuel economy in miles per gallon for cars in the mpg dataset, showing that cars with better city mileage also get better highway mileage.">
+<meta property="og:image:height" content="2000">
+<meta property="og:image:width" content="2800">
+<meta name="twitter:title" content="R Graphs – Isai Quiñones">
+<meta name="twitter:description" content="Charts and lessons from a week-long R for Data Science crash course.">
+<meta name="twitter:image" content="https://iquinones2.github.io/R-Data-Science-Portfolio/posts/cool_ggplot_work/index_files/figure-html/MPG in city vs highway-1.png">
+<meta name="twitter:image:alt" content="Scatterplot of city versus highway fuel economy in miles per gallon for cars in the mpg dataset, showing that cars with better city mileage also get better highway mileage.">
+<meta name="twitter:image-height" content="2000">
+<meta name="twitter:image-width" content="2800">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -182,7 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Isai Quinones </p>
+               <p>Isai Quiñones </p>
             </div>
     </div>
       
@@ -208,7 +222,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>On Aug.&nbsp;17th through the 21st I took a week long crash course on how to use R for Data Science.</p>
+<p>On Aug.&nbsp;17th through the 21st I took a week-long crash course on how to use R for Data Science.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -222,12 +236,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/MPG in city vs highway-1.png" class="img-fluid figure-img" width="1400"></p>
+<p><img src="index_files/figure-html/MPG in city vs highway-1.png" class="img-fluid figure-img" alt="Scatterplot of city versus highway fuel economy in miles per gallon for cars in the mpg dataset, showing that cars with better city mileage also get better highway mileage." width="1400"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>This is great, but one thing we learned about is the importance of clear labels using the lab functions.</p>
+<p>This is great, but one thing we learned about is the importance of clear labels using the <code>labs()</code> function.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -240,8 +254,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>)<span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span> </span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"City Milage"</span>,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Highway Milage"</span>, </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"City Mileage"</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Highway Mileage"</span>, </span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"City vs Highway"</span></span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
@@ -250,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/c2-1.png" class="img-fluid figure-img" width="1400"></p>
+<p><img src="index_files/figure-html/c2-1.png" class="img-fluid figure-img" alt="The same city versus highway mileage scatterplot with a smoothed trend line rising from left to right, an axis label on each axis, and the title City vs Highway." width="1400"></p>
 </figure>
 </div>
 </div>
@@ -332,7 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/iquinones2\.github\.io\/R-Data-Science-Portfolio\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

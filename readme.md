@@ -1,7 +1,6 @@
-```markdown
 # R Data Science Portfolio
 
-A portfolio of data science projects and analyses created with R. This site highlights my approach to exploring data, communicating insights, and building reproducible workflows.
+A portfolio of data science projects and analyses created with R, live at **[iquinones2.github.io/R-Data-Science-Portfolio](https://iquinones2.github.io/R-Data-Science-Portfolio/)**. This site highlights my approach to exploring data, communicating insights, and building reproducible workflows.
 
 ## About
 
@@ -26,7 +25,6 @@ The portfolio includes work from several project areas beyond a single analysis 
 - **Stock-Bond Analysis** — exploring market relationships and portfolio-oriented analysis
 - **Salem-Web-Blog** — combining storytelling with data-informed reporting
 - **cool_ggplot_work** — experimenting with advanced visual design and chart communication
-- **myDog** — applying exploratory analysis and data presentation to a personal dataset
 
 These projects show how the same core R-based workflow can be applied across different topics, datasets, and communication styles.
 
@@ -41,7 +39,7 @@ These projects show how the same core R-based workflow can be applied across dif
 To explore the project files, clone this repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/iquinones2/R-Data-Science-Portfolio.git
 ```
 
 Open the relevant project files in RStudio. Install any packages listed in the individual project instructions before running the analysis.
@@ -53,4 +51,3 @@ For questions or collaboration, connect with me through my GitHub profile.
 ---
 
 *Thanks for visiting my portfolio.*
-```
