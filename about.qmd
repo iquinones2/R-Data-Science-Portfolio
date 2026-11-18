@@ -13,7 +13,7 @@ image: images/headshot.jpg
     <img class="about-photo" src="images/headshot.jpg" width="600" height="600"
          alt="Headshot of Isai Quiñones in a suit and tie">
     <div>
-      <p class="status"><span class="dot" aria-hidden="true"></span>Open to <span class="d-only">full-time </span>data science roles · Summer 2027</p>
+      <p class="status"><span class="dot" aria-hidden="true"></span>Open to <span class="d-only">full-time </span>Data Science roles · Summer 2027</p>
       <p class="kicker">About <span aria-hidden="true">·</span> Dominican University '27</p>
       <h1>Hi, I'm Isai.</h1>
       <p class="lede">I'm a first-generation data science student with a minor in finance. I build data pipelines, dashboards, and statistical analyses, and I'm looking for full-time data science roles starting summer 2027.</p>
